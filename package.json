@@ -1,0 +1,38 @@
+{
+  "name": "zavolan",
+  "private": true,
+  "version": "0.1.0",
+  "description": "ZaVolan — teorijski ispit: vežbanje pitanja iz bezbednosti saobraćaja",
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "dev": "vite",
+    "prebuild": "node scripts/generate-pwa-icons.mjs",
+    "build": "vite build",
+    "format": "prettier --write .",
+    "lint": "eslint .",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "preview": "vite preview",
+    "extract": "node scripts/extract-pitanja.mjs",
+    "sync-images": "node scripts/sync-explicit-images.mjs",
+    "generate-counts": "node scripts/generate-counts.mjs",
+    "report-coverage": "node scripts/report-coverage.mjs",
+    "manual:html": "python3 scripts/build_manual_html.py"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.21.0",
+    "eslint": "^9.21.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-unused-imports": "^4.4.1",
+    "globals": "^15.15.0",
+    "jsdom": "^29.0.1",
+    "prettier": "^3.8.1",
+    "sharp": "^0.34.5",
+    "vite": "^6.0.1",
+    "vite-plugin-pwa": "^1.2.0",
+    "vitest": "^4.1.1"
+  }
+}

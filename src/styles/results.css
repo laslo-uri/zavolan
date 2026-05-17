@@ -1,0 +1,293 @@
+.result-summary {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem 1.5rem;
+  width: 100%;
+  max-width: none;
+  margin-bottom: 1.5rem;
+  padding: 1.25rem 1.5rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--color-border);
+  background: var(--color-bg-card);
+  position: relative;
+  overflow: hidden;
+  animation: result-summary-enter 0.45s ease-out;
+}
+
+@keyframes result-summary-enter {
+  from {
+    opacity: 0;
+    transform: translateY(-12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.result-summary::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: 0.06;
+  pointer-events: none;
+}
+
+.result-summary--pass::before {
+  background: radial-gradient(ellipse 80% 80% at 20% 50%, var(--color-success) 0%, transparent 60%);
+}
+
+.result-summary--fail::before {
+  background: radial-gradient(ellipse 80% 80% at 20% 50%, var(--color-error) 0%, transparent 60%);
+}
+
+.result-summary__score-ring {
+  flex-shrink: 0;
+  position: relative;
+  width: 88px;
+  height: 88px;
+}
+
+.result-summary__ring-svg {
+  width: 100%;
+  height: 100%;
+  transform: rotate(-90deg);
+}
+
+.result-summary__ring-bg {
+  fill: none;
+  stroke: var(--color-border);
+  stroke-width: 3;
+}
+
+.result-summary__ring-fill {
+  fill: none;
+  stroke-width: 3;
+  stroke-linecap: round;
+  transition: stroke-dasharray 0.6s ease-out;
+}
+
+.result-summary--pass .result-summary__ring-fill {
+  stroke: var(--color-success);
+}
+
+.result-summary--fail .result-summary__ring-fill {
+  stroke: var(--color-error);
+}
+
+.result-summary__score-value {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: 700;
+  font-family: var(--font-display);
+  color: var(--color-text);
+}
+
+.result-summary__score-value small {
+  font-size: 0.6em;
+  font-weight: 500;
+  opacity: 0.8;
+  margin-left: 1px;
+}
+
+.result-summary__body {
+  flex: 0 1 auto;
+  min-width: 200px;
+}
+
+.result-summary__title {
+  margin: 0 0 0.25rem;
+  font-size: 1.4rem;
+  font-weight: 700;
+  font-family: var(--font-display);
+  color: var(--color-text);
+}
+
+.result-summary--pass .result-summary__title {
+  color: var(--color-success);
+}
+
+.result-summary--fail .result-summary__title {
+  color: var(--color-error);
+}
+
+.result-summary__subtitle {
+  margin: 0 0 0.75rem;
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+  line-height: 1.5;
+}
+
+.result-summary__stats {
+  display: flex;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.result-summary__stat {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.15rem;
+  padding: 0.4rem 0.75rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.85rem;
+}
+
+.result-summary__stat--correct {
+  background: var(--color-success-bg);
+  color: var(--color-success);
+}
+
+.result-summary__stat--wrong {
+  background: var(--color-error-bg);
+  color: var(--color-error);
+}
+
+.result-summary__stat-value {
+  font-weight: 700;
+  font-size: 1.1rem;
+  line-height: 1;
+}
+
+.result-summary__stat-label {
+  text-transform: lowercase;
+  opacity: 0.95;
+}
+
+.btn-submit,
+.btn-retry {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: var(--radius-sm);
+  background: var(--color-primary);
+  color: var(--color-text-on-primary);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background var(--transition);
+}
+
+.btn-submit:hover,
+.btn-retry:hover {
+  background: var(--color-primary-dark);
+}
+
+.btn-retry {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.25rem;
+  transition: background var(--transition), transform var(--transition), box-shadow var(--transition);
+}
+
+.btn-retry:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px var(--color-primary-glow);
+}
+
+.btn-retry__icon {
+  font-size: 1.2em;
+  line-height: 1;
+  opacity: 0.9;
+}
+.result-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  margin-left: 0.5rem;
+  padding: 0.35rem 0.7rem;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  border: 1px solid transparent;
+}
+
+.result-badge.correct {
+  background: var(--color-success-bg);
+  color: var(--color-success);
+  border-color: var(--color-primary-border-subtle);
+}
+
+.result-badge.incorrect {
+  background: var(--color-error-bg);
+  color: var(--color-error);
+  border-color: rgba(239, 68, 68, 0.3);
+}
+.question-card.revealed .answer[data-correct="true"].wrong {
+  background: var(--color-error-bg);
+  border-color: var(--color-error);
+  color: var(--color-error);
+}
+
+.question-card.revealed .answer[data-correct="true"].wrong::before {
+  border-color: var(--color-error);
+  background: transparent;
+}
+
+.question-card.revealed .answer[data-correct="false"].selected {
+  background: var(--color-error-bg);
+  border-color: var(--color-error);
+  color: var(--color-error);
+}
+
+.question-card.revealed .answer[data-correct="false"].selected::before {
+  content: '✕';
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--text-xs);
+  border: none;
+  background: transparent;
+}
+
+.btn-submit {
+  padding: 0.75rem 2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  background: var(--color-primary);
+  color: var(--color-text-on-primary);
+  border: none;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: background var(--transition), transform var(--transition);
+  margin-top: 1rem;
+}
+
+.btn-submit:hover {
+  background: var(--color-primary-dark);
+  transform: translateY(-1px);
+}
+
+.btn-retry {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.65rem 1.25rem;
+  border: 1px solid var(--color-border);
+  background: transparent;
+  color: var(--color-text);
+  font-weight: 600;
+  transition: background var(--transition), border-color var(--transition), color var(--transition);
+}
+
+.btn-retry:hover {
+  background: var(--color-bg-light);
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
+.btn-retry__icon {
+  font-size: 1.1em;
+  line-height: 1;
+}
+

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="sr-Latn">
+<head>
+  <meta charset="UTF-8">
+  <script>
+    (function () {
+      try {
+        var APP_SLUG = 'zavolan';
+        var t = localStorage.getItem(APP_SLUG + '-theme');
+        if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t);
+      } catch (e) {}
+    })();
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#212121">
+  <meta name="description" content="ZaVolan — vežbajte pitanja teorijskog ispita iz bezbednosti saobraćaja za vozački ispit u Republici Srbiji. Teme, podoblasti i režim simulacije.">
+  <meta property="og:title" content="ZaVolan · Priprema za vozački ispit">
+  <meta property="og:description" content="Vežbajte pitanja teorijskog ispita iz bezbednosti saobraćaja za vozački ispit u Republici Srbiji.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="sr_RS">
+  <meta property="og:image" content="/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="ZaVolan · Priprema za vozački ispit">
+  <meta name="twitter:description" content="Vežbajte pitanja teorijskog ispita iz bezbednosti saobraćaja za vozački ispit u Republici Srbiji.">
+  <meta name="twitter:image" content="/og-image.png">
+  <title>ZaVolan · Priprema za vozački ispit</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="preload" href="/data.json" as="fetch" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&display=swap" rel="stylesheet">
+  <style>
+    html, body { background: #212121; color: #ececec; margin: 0; }
+    html[data-theme="light"] body, html[data-theme="light"] { background: #fafafa; color: #18181b; }
+    a { color: inherit; text-decoration: none; }
+    .app { display: flex; min-height: 100vh; }
+    .sidebar { background: #171717; width: 260px; flex-shrink: 0; }
+    html[data-theme="light"] .sidebar { background: #f4f4f5; }
+    .content { flex: 1; }
+    .skip-link {
+      position: fixed;
+      top: 0;
+      left: 0.5rem;
+      z-index: 2000;
+      padding: 0.5rem 1rem;
+      margin-top: max(0.5rem, env(safe-area-inset-top));
+      font-family: system-ui, sans-serif;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #fff;
+      background: #10a37f;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+      text-decoration: none;
+      transform: translateY(-150%);
+    }
+    .skip-link:focus { outline: none; }
+    .skip-link:focus-visible {
+      transform: translateY(0);
+      outline: 2px solid rgba(16, 163, 127, 0.35);
+      outline-offset: 2px;
+    }
+  </style>
+</head>
+<body>
+  <a href="#detail" class="skip-link">Preskoči na sadržaj</a>
+  <div class="sidebar-overlay" id="sidebarOverlay" aria-hidden="true"></div>
+  <button
+    type="button"
+    class="sidebar-toggle sidebar-toggle--peek js-sidebar-toggle"
+    aria-label="Otvori navigaciju"
+    title="Otvori navigaciju"
+  >
+    <span class="sidebar-toggle__icon" aria-hidden="true"></span>
+  </button>
+  <div class="app">
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <div class="sidebar-header__row">
+          <a href="/" class="sidebar-brand" aria-label="ZaVolan – početna">
+            <div class="sidebar-logo" aria-hidden="true">
+              <img src="/logo.svg" alt="" width="32" height="32">
+            </div>
+            <h1 class="sidebar-title">ZaVolan</h1>
+          </a>
+          <button
+            type="button"
+            class="sidebar-toggle sidebar-toggle--in-drawer js-sidebar-toggle"
+            aria-label="Skupi navigaciju"
+            title="Skupi navigaciju"
+          >
+            <span class="sidebar-toggle__icon" aria-hidden="true"></span>
+          </button>
+        </div>
+        <p class="tagline">Od pitanja do vozačke</p>
+      </div>
+      <nav class="nav" id="nav"></nav>
+    </aside>
+
+    <main class="content">
+      <nav class="breadcrumb" id="breadcrumb"><a href="/">Početna</a></nav>
+      <section class="detail" id="detail" tabindex="-1"></section>
+    </main>
+  </div>
+  <div id="offlineBanner" class="offline-banner" hidden role="status">
+    Nema veze sa mrežom — aplikacija može koristiti keširane podatke dok ste oflajn.
+  </div>
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+coverage/
+dev-dist/
+
+# Vercel (local project link; tokens stay out of repo)
+.vercel
+
+# Environment and secrets
+.env
+.env.*
+!.env.example
+*.local
+
+# Extraction source folders
+podoblast-*/
+
+# Question JSON and images (build locally; not in public repo)
+public/database/**
+!public/database/README.md
+
+# Handbook / samples (local only; large)
+docs/
+
+# HTML scrape downloads (local only)
+__downloads/
+
+# Logs and caches
+*.log
+npm-debug.log*
+.npm
+.cache
+
+# Editor / IDE
+.idea/
+.cursor/
+.vscode/*
+!.vscode/extensions.json
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db

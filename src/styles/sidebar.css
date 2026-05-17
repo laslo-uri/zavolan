@@ -1,0 +1,210 @@
+.app { display: flex; min-height: 100vh; }
+
+.sidebar {
+  width: var(--sidebar-width);
+  padding-top: calc(var(--sidebar-pad-y) + env(safe-area-inset-top));
+  padding-right: calc(var(--sidebar-pad-x) + env(safe-area-inset-right));
+  padding-bottom: calc(var(--sidebar-pad-bottom) + env(safe-area-inset-bottom));
+  padding-left: calc(var(--sidebar-pad-x) + env(safe-area-inset-left));
+  background: var(--color-neutral);
+  color: var(--color-sidebar-text);
+  border-right: 1px solid rgba(255,255,255,0.04);
+  flex-shrink: 0;
+  transition: width 0.25s ease;
+  position: relative;
+  --sb-fade: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  max-height: 100vh;
+  overflow: hidden;
+  scrollbar-gutter: stable;
+  scrollbar-width: thin;
+  scrollbar-color: transparent var(--color-neutral);
+}
+
+.sidebar-header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.35rem;
+  flex-shrink: 0;
+}
+
+.sidebar-header__row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+.sidebar-header__row .sidebar-brand {
+  flex: 1;
+  min-width: 0;
+}
+
+.sidebar-toggle {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border: none;
+  border-radius: var(--radius-sm);
+  background: transparent;
+  color: var(--color-text-muted);
+  cursor: pointer;
+  transition: background var(--transition), color var(--transition);
+}
+
+.sidebar-toggle:hover {
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--color-text);
+}
+
+.sidebar-toggle:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+.sidebar-toggle__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sidebar-toggle__icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+.sidebar-toggle--peek {
+  display: none;
+  position: fixed;
+  left: 0;
+  top: calc(var(--sidebar-pad-y) + env(safe-area-inset-top));
+  z-index: 1002;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-left: none;
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  background: var(--color-neutral);
+  color: var(--color-text-muted);
+  cursor: pointer;
+  box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.25);
+  transition: background var(--transition), color var(--transition);
+}
+
+.sidebar-toggle--peek:hover {
+  background: var(--color-bg-light);
+  color: var(--color-text);
+}
+
+.sidebar-toggle--peek:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+@media (max-width: 768px) {
+  body:not(.sidebar-open) .sidebar-toggle--peek {
+    display: inline-flex;
+  }
+
+  body.sidebar-open .sidebar-toggle--peek {
+    display: none;
+  }
+
+  body:not(.sidebar-open) .sidebar-toggle--in-drawer {
+    display: none !important;
+  }
+
+  body.sidebar-open .sidebar-toggle--in-drawer {
+    display: inline-flex;
+  }
+}
+
+@media (min-width: 769px) {
+  body.sidebar-collapsed .sidebar-toggle--peek {
+    display: inline-flex;
+  }
+
+  body:not(.sidebar-collapsed) .sidebar-toggle--peek {
+    display: none;
+  }
+
+  body.sidebar-collapsed .sidebar-toggle--in-drawer {
+    display: none !important;
+  }
+
+  body:not(.sidebar-collapsed) .sidebar-toggle--in-drawer {
+    display: inline-flex;
+  }
+}
+
+.sidebar-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  text-decoration: none;
+  color: inherit;
+  transition: opacity 0.2s ease;
+}
+
+.sidebar-brand:hover {
+  opacity: 0.9;
+}
+
+.sidebar-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  color: var(--color-text-on-primary);
+}
+
+.sidebar-logo img {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+  display: block;
+}
+
+.sidebar-logo svg {
+  width: 32px;
+  height: 32px;
+}
+
+.sidebar h1,
+.sidebar-title {
+  margin: 0;
+  font-family: var(--font-brand);
+  font-size: 1.2rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  color: var(--color-primary);
+}
+
+.sidebar .tagline {
+  margin: 0;
+  font-size: 0.8rem;
+  opacity: 0.65;
+  color: var(--color-text-muted);
+  line-height: 1.35;
+  padding-left: calc(32px + 0.65rem);
+}
+
+@media (min-width: 769px) {
+  body.sidebar-collapsed .sidebar .tagline {
+    margin: 0;
+  }
+}
+

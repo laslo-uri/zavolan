@@ -1,0 +1,98 @@
+
+:root {
+  --color-primary: #10a37f;
+  --color-primary-hover: #0d8c6d;
+  --color-primary-dark: #0a6b54;
+  --color-secondary: #8e8ea0;
+  --color-secondary-hover: #a0a0b0;
+  --color-neutral: #171717;
+  --color-bg: #212121;
+  --color-bg-light: #2f2f2f;
+  --color-bg-card: #2f2f2f;
+  --color-border: #404040;
+  --color-text: #ececec;
+  --color-text-muted: #8e8ea0;
+  --color-link: #10a37f;
+  --color-link-hover: #0d8c6d;
+  --color-success: #10a37f;
+  --color-success-bg: rgba(16, 163, 127, 0.15);
+  --color-error: #ef4444;
+  --color-error-bg: rgba(239, 68, 68, 0.15);
+  --color-warning: #eab308;
+  --color-warning-hover: #facc15;
+  --color-warning-bg: rgba(234, 179, 8, 0.12);
+  --color-bookmark: #facc15;
+  --color-bookmark-soft: #fde047;
+  --color-bookmark-deep: #ca8a04;
+  --color-bookmark-muted: #a16207;
+  --color-bookmark-bg: rgba(234, 179, 8, 0.2);
+  --color-bookmark-bg-soft: rgba(234, 179, 8, 0.12);
+  --color-bookmark-border: rgba(250, 204, 21, 0.45);
+  --color-bookmark-border-strong: rgba(250, 204, 21, 0.7);
+  --color-bookmark-glow: rgba(250, 204, 21, 0.35);
+  --color-bookmark-cta-text: #1c1917;
+  --font-display: 'Sora', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-body: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-brand: var(--font-display);
+
+  --sidebar-width: 260px;
+  
+  --sidebar-pad-x: 1.25rem;
+  --sidebar-pad-y: 1.25rem;
+  --sidebar-pad-bottom: 1.5rem;
+  
+  --nav-control-height: 2.25rem;
+  --nav-stack-gap: 0.28rem;
+  
+  --nav-inline-pad: 0.55rem;
+  --nav-all-topics-gap: 0.45rem;
+  
+  --sidebar-peek-hit: 44px;
+  --sidebar-peek-gap: 0.75rem;
+  --content-max: 720px;
+  --radius: 12px;
+  --radius-sm: 8px;
+  --radius-md: 10px;
+  --shadow: 0 0 0 1px rgba(255, 255, 255, 0.05);
+  --shadow-hover: 0 4px 12px rgba(0, 0, 0, 0.3);
+  
+  --ease-smooth: cubic-bezier(0.25, 0.82, 0.28, 1);
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --duration-fast: 0.2s;
+  --duration-ui: 0.24s;
+  --duration-emphasis: 0.34s;
+  --duration-reveal: 0.48s;
+  --transition: var(--duration-ui) var(--ease-smooth);
+  --transition-reveal: var(--duration-reveal) var(--ease-out-expo);
+
+  
+  --text-xs: 0.75rem;
+  --text-sm: 0.85rem;
+  --text-base: 0.9rem;
+  --text-md: 1rem;
+  --text-lg: 1.1rem;
+  --text-xl: 1.25rem;
+  --text-2xl: 1.5rem;
+
+  
+  --radius-xs: 4px;
+  --radius-xs-alt: 6px;
+
+  
+  --color-text-on-primary: #fff;
+  --color-sidebar-text: #cbd5e1;
+  --color-nav-hover: #e2e8f0;
+  --color-primary-subtle: rgba(16, 163, 127, 0.08);
+  --color-primary-pill: rgba(16, 163, 127, 0.1);
+  --color-primary-pill-hover: rgba(16, 163, 127, 0.2);
+  --color-primary-active: rgba(16, 163, 127, 0.12);
+  --color-primary-glow: rgba(16, 163, 127, 0.35);
+  --color-primary-border: rgba(16, 163, 127, 0.5);
+  --color-primary-border-subtle: rgba(16, 163, 127, 0.3);
+}
+
+@property --sb-fade {
+  syntax: '<number>';
+  inherits: false;
+  initial-value: 0;
+}

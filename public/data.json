@@ -1,0 +1,205 @@
+{
+  "topics": [
+    {
+      "id": "1",
+      "name": "Osnove bezbednosti saobraćaja",
+      "nameShort": "Osnove bezbednosti",
+      "description": "Temeljna znanja o bezbednosti saobraćaja – zakonski okvir, osnovna načela i terminologija potrebna za bezbedno učešće u saobraćaju.",
+      "subtopics": [
+        { "id": "1-1", "name": "Osnovne odredbe i načela bezbednosti saobraćaja", "description": "Osnovne odredbe i osnovna načela bezbednosti saobraćaja na putevima – zakonski okvir, načela predostrožnosti i obaveze učesnika u saobraćaju." },
+        { "id": "1-2", "name": "Saobraćajne nezgode, njihovi uzroci i posledice", "description": "Saobraćajne nezgode – uzroci, posledice i način njihovog sprečavanja." },
+        { "id": "1-3", "name": "Značenje izraza koji se koriste u propisima o bezbednosti saobraćaja", "description": "Značenje izraza koji se koriste u propisima o bezbednosti saobraćaja – terminologija iz Zakona o bezbednosti saobraćaja." }
+      ]
+    },
+    {
+      "id": "2",
+      "name": "Vozač",
+      "nameShort": "Vozač",
+      "description": "Uloga vozača u bezbednosti saobraćaja – psihofizički uslovi, ponašanje, procena situacije i faktori koji utiču na vozača.",
+      "subtopics": [
+        { "id": "2-1", "name": "Pojam, značaj i uticaj vozača na bezbednost saobraćaja", "description": "Pojam, značaj i uticaj vozača na bezbednost saobraćaja – centralna uloga vozača u sprečavanju nezgoda." },
+        { "id": "2-2", "name": "Osobine i postupci vozača koji utiču na bezbednost saobraćaja", "description": "Osobine i postupci vozača koji utiču na bezbednost saobraćaja – veštine i ponašanje koje doprinose bezbednoj vožnji." },
+        { "id": "2-3", "name": "Sociološki činioci koji utiču na ponašanje vozača", "description": "Sociološki činioci koji utiču na ponašanje vozača – društveni i kulturni faktori." },
+        { "id": "2-4", "name": "Značaj procene saobraćajne situacije i način donošenja odluka vozača", "description": "Značaj procene saobraćajne situacije i način donošenja odluka vozača – kako vozač procenjuje i reaguje na saobraćajne situacije." },
+        { "id": "2-5", "name": "Orijentacija vozača u vremenu i prostoru", "description": "Orijentacija vozača u vremenu i prostoru – procena rastojanja, brzine i položaja u saobraćaju." },
+        { "id": "2-6", "name": "Psihički procesi i psihološki činioci vozača", "description": "Osnovni psihički procesi (osećaji, opažanje, predstave, pažnja, emocije, mišljenje, refleksi i dr.) i psihološki činioci koji utiču na procene, donošenje i sprovođenje odluka vozača u toku vožnje. Kako percepcija, pažnja i emocije utiču na bezbednost." },
+        { "id": "2-7", "name": "Vreme reakcije, pažnja i umor vozača", "description": "Vreme reakcije, pažnja i umor vozača – pojam, značaj, uticaj individualnih i spoljnih faktora, uticaj spoljne sredine, motivacija, iskustvo, budnost, faktori koji doprinose umoru, efekti umora, mere za otklanjanje umora i dr." },
+        { "id": "2-8", "name": "Alkohol i psihoaktivne supstance kod vozača", "description": "Promene kod vozača koje nastaju usled korišćenja alkohola i/ili drugih psihoaktivnih supstanci čija je upotreba zabranjena pre i za vreme vožnje – uticaj na sposobnosti i ponašanje vozača, tipične greške vozača pod uticajem alkohola i dr." },
+        { "id": "2-9", "name": "Psihofizički uslovi za upravljanje vozilom koji moraju ispunjavati vozači i način utvrđivanja ispunjenosti tih uslova u saobraćaju na putu", "description": "Psihofizički uslovi za upravljanje vozilom – zdravstveni i drugi uslovi koje vozač mora ispunjavati." }
+      ]
+    },
+    {
+      "id": "3",
+      "name": "Trajanje upravljanja motornim vozilom, odnosno skupom vozila",
+      "nameShort": "Upravljanje vozilom",
+      "description": "Pravila o vremenu vožnje i odmoru vozača – obavezne pauze, tahograf i evidencija.",
+      "subtopics": [
+        { "id": "3-1", "name": "Vreme upravljanja vozilom u saobraćaju na putu i odmori vozača (prekid upravljanja radi odmora, neprekidni odmor) – 1", "description": "Vreme upravljanja vozilom i odmori vozača – prekid upravljanja radi odmora, neprekidni odmor (1. deo)." },
+        { "id": "3-2", "name": "Vreme upravljanja vozilom u saobraćaju na putu i odmori vozača (prekid upravljanja radi odmora, neprekidni odmor) – 2", "description": "Vreme upravljanja vozilom i odmori vozača – prekid upravljanja radi odmora, neprekidni odmor (2. deo)." },
+        { "id": "3-3", "name": "Način upotrebe i korišćenja tahografa – opšte odredbe", "description": "Način upotrebe i korišćenja tahografa – opšte odredbe za evidenciju vremena vožnje." },
+        { "id": "3-4", "name": "Način upotrebe i korišćenja tahografa – analogni", "description": "Način upotrebe i korišćenja analognog tahografa." },
+        { "id": "3-5", "name": "Način upotrebe i korišćenja tahografa – digitalni", "description": "Način upotrebe i korišćenja digitalnog tahografa." }
+      ]
+    },
+    {
+      "id": "4",
+      "name": "Put",
+      "nameShort": "Put",
+      "description": "Karakteristike puta, uticaj vremenskih uslova i tehničko regulisanje saobraćaja.",
+      "subtopics": [
+        { "id": "4-1", "name": "Pojam, značaj puta i vrste puteva", "description": "Pojam, značaj puta i vrste puteva – kategorije puteva i njihove karakteristike." },
+        { "id": "4-2", "name": "Karakteristike puta za bezbednost saobraćaja", "description": "Karakteristike puta koje su od značaja za bezbednost saobraćaja: poprečni profil puta, kolovozni zastor, prijanjanje, broj i širina saobraćajnih traka, odvodnjavanje, oštećenja kolovoza, preglednost puta, horizontalne i vertikalne krivine, tuneli, mostovi, nadvožnjaci, podvožnjaci i drugi putni objekti." },
+        { "id": "4-3", "name": "Uticaj vremenskih prilika na put i saobraćaj", "description": "Uticaj vremenskih prilika (snega, snežne vejavice, kiše, magle, poledice, grada, temperature, vazdušnog pritiska, vlažnosti vazduha i dr.) na stanje puta i bezbedno odvijanje saobraćaja – vidljivost, dužina zaustavnog puta, režim vožnje i dr." },
+        { "id": "4-4", "name": "Put u noćnim uslovima i oprema puta", "description": "Put u noćnim uslovima vožnje – uticaj na sposobnost vozača, uočljivost drugih vozila, pešaka i prepreka na putu, uticaj na brzinu kretanja i procenu brzine drugih vozila i dr. Oprema puta za noćnu vožnju." },
+        { "id": "4-5", "name": "Tehničko regulisanje saobraćaja", "description": "Tehničko regulisanje saobraćaja – opšte odredbe, pešačka zona, zona usporenog saobraćaja, zona „30”, zona škole, zaštita životne sredine, tehnička sredstva za usporavanje saobraćaja i dr." }
+      ]
+    },
+    {
+      "id": "5",
+      "name": "Vozilo i tehnički uslovi koje moraju da ispune motorna i priključna vozila u saobraćaju na putu",
+      "nameShort": "Vozilo",
+      "description": "Tehnički uslovi za vozila – registracija, tehnički pregledi, aktivna i pasivna bezbednost.",
+      "subtopics": [
+        { "id": "5-1", "name": "Pojam i značaj vozila, definicije vrsta vozila i identifikaciona oznaka vozila", "description": "Pojam i značaj vozila, definicije vrsta vozila i identifikaciona oznaka vozila." },
+        { "id": "5-2", "name": "Osobine vozila za bezbednost saobraćaja", "description": "Osobine vozila koje utiču na bezbedno odvijanje saobraćaja na putevima – konstrukcija, vrsta materijala, način izrade i uslovi eksploatacije, tehničko održavanje, odobrenje tipa vozila i dr." },
+        { "id": "5-3", "name": "Osnovni sklopovi i uređaji vozila, propisani tehnički uslovi – 2", "description": "Osnovni sklopovi i uređaji vozila, propisani tehnički uslovi (2. deo)." },
+        { "id": "5-4", "name": "Osnovni sklopovi i uređaji vozila, propisani tehnički uslovi – 3", "description": "Osnovni sklopovi i uređaji vozila, propisani tehnički uslovi (3. deo)." },
+        { "id": "5-5", "name": "Osnovni sklopovi i uređaji vozila, propisani tehnički uslovi – 4", "description": "Osnovni sklopovi i uređaji vozila, propisani tehnički uslovi (4. deo)." },
+        { "id": "5-6", "name": "Neispravnosti vozila i lanaci za sneg", "description": "Najčešće i najopasnije neispravnosti vozila i mogućnosti njihovog otklanjanja od strane vozača raspoloživom opremom i sredstvima. Postavljanje na točkove lanaca za sneg." },
+        { "id": "5-7", "name": "Značaj i uticaj opterećenja i načina opterećenja vozila na bezbednost saobraćaja", "description": "Značaj i uticaj opterećenja i načina opterećenja vozila na bezbednost saobraćaja." },
+        { "id": "5-8", "name": "Elementi aktivne bezbednosti vozila", "description": "Elementi aktivne bezbednosti vozila – pojam i značaj, stabilnost i upravljivost vozila, uređaj za upravljanje, uređaj za kočenje, pneumatici, uređaji koji obezbeđuju vidljivost, ogibljenje vozila, transmisija, električna instalacija i dr." },
+        { "id": "5-9", "name": "Elementi pasivne bezbednosti vozila", "description": "Elementi pasivne bezbednosti vozila – pojam i značaj, karoserija vozila, konstrukcija vozila, upotrebljeni materijali, zaštita dece u vozilu, zaštita lica koja se prevoze motociklom, unutrašnjost vozila, spoljni delovi vozila, sklopovi i uređaji vozila čiji je osnovni cilj obezbeđivanje pasivne bezbednosti, sigurnosni pojasevi, vazdušni jastuci, nasloni za glavu i dr." },
+        { "id": "5-10", "name": "Elementi katalitičke bezbednosti vozila", "description": "Elementi katalitičke bezbednosti vozila – pojam i značaj, buka, vibracije, izduvni gasovi, grejanje, ventilacija, klimatizacija i dr." },
+        { "id": "5-11", "name": "Uslovi za učešće vozila u saobraćaju", "description": "Uslovi za učešće vozila u saobraćaju na putu – registracija vozila, saobraćajna dozvola, registarske tablice, registraciona nalepnica, privremena registracija, tablice za privremeno označavanje i dr." },
+        { "id": "5-12", "name": "Tehnička ispravnost vozila, tehnički pregledi vozila, redovni, vanredni i kontrolni tehnički pregledi", "description": "Tehnička ispravnost vozila, tehnički pregledi – redovni, vanredni i kontrolni tehnički pregledi." },
+        { "id": "5-13", "name": "Ekonomična vožnja i uticaj na životnu sredinu", "description": "Osnove ekonomične vožnje i uticaj saobraćaja na stanje životne sredine i njeno ugrožavanje – pojam i značaj, uticaj tehnike vožnje, značaj tehničke ispravnosti vozila i motora u zaštiti životne sredine od zagađenja bukom i izduvnim gasovima." },
+        { "id": "5-14", "name": "Zabrana odlaganja i ispuštanja materija i otpada kojim se ugrožava životna sredina", "description": "Zabrana odlaganja i ispuštanja materija i otpada kojim se ugrožava životna sredina." }
+      ]
+    },
+    {
+      "id": "6",
+      "name": "Pravila saobraćaja",
+      "nameShort": "Pravila saobraćaja",
+      "description": "Pravila ponašanja učesnika u saobraćaju – brzina, prvenstvo prolaza, zaustavljanje, parkiranje i ostalo.",
+      "subtopics": [
+        { "id": "6-1", "name": "Pojam i značaj pravila saobraćaja", "description": "Pojam i značaj pravila saobraćaja – zašto su pravila neophodna." },
+        { "id": "6-2", "name": "Opšte odredbe o ponašanju učesnika u saobraćaju", "description": "Opšte odredbe o ponašanju učesnika u saobraćaju: hijerarhija postupanja učesnika u saobraćaju, način kretanja vozila i obaveza držanja odstojanja i rastojanja, ostavljanje predmeta na putu, opšta obaveza prema pešacima, slepim osobama, odnos prema vozilima koja vrše prevoz putnika i dece, korišćenje telefona i drugih uređaja za komunikaciju, zabrana korišćenja uređaja za otkrivanje i ometanje rada uređaja za merenje brzine, korišćenje sigurnosnih pojaseva, svetloodbojnih prsluka i dr." },
+        { "id": "6-3", "name": "Pokazivači pravca, uključivanje i kretanje vozila po putu", "description": "Upotreba pokazivača pravca, uključivanje vozila u saobraćaj i isključivanje iz saobraćaja, kretanje vozila po putu – kretanje po kolovozu puta u zavisnosti od broja saobraćajnih traka i njihove namene, kretanje po saobraćajnim trakama za uključivanje i isključivanje, kretanje po saobraćajnim trakama za spora vozila i saobraćajnim trakama za vozila javnog prevoza putnika, kretanje tramvajskom bašticom, usporavanje vozila i dr." },
+        { "id": "6-4", "name": "Skretanje (skretanje ulevo ili udesno), polukružno okretanje, kretanje vozilom unazad, mimoilaženje (opšta pravila koja se tiču mimoilaženja između vozila, odnosno vozila i pešaka)", "description": "Skretanje ulevo ili udesno, polukružno okretanje, kretanje vozilom unazad, mimoilaženje – opšta pravila." },
+        { "id": "6-5", "name": "Obilaženje i preticanje (opšta pravila, način, zabrane)", "description": "Obilaženje i preticanje – opšta pravila, način izrade i zabrane." },
+        { "id": "6-6", "name": "Brzina (pojam, ograničenja, prilagođavanje)", "description": "Brzina – pojam brzine, trenutna brzina, srednja brzina, prilagođavanje brzine uslovima saobraćaja, stanju puta, atmosferskim prilikama, vidljivosti, preglednosti, gustini saobraćaja, ograničenje brzine u naselju, odnosno van naselja, ograničenje brzine prema vrsti i nameni vozila, vrsti puta, ograničenja brzine izražena saobraćajnim znakovima." },
+        { "id": "6-7", "name": "Prvenstvo prolaza (prvenstvo prolaza na raskrsnici, pri uključivanju na put, pri susretu sa tramvajem i vozom)", "description": "Prvenstvo prolaza na raskrsnici, pri uključivanju na put, pri susretu sa tramvajem i vozom." },
+        { "id": "6-8", "name": "Saobraćaj na raskrsnici (opšta pravila, način kretanja kroz raskrsnicu)", "description": "Saobraćaj na raskrsnici – opšta pravila i način kretanja kroz raskrsnicu." },
+        { "id": "6-9", "name": "Nasilnička vožnja (pojam, ponašanje vozača koji predstavljaju nasilničku vožnju i opasnosti koja ona donosi)", "description": "Nasilnička vožnja – pojam, ponašanje vozača i opasnosti koje donosi." },
+        { "id": "6-10", "name": "Zvučni ili svetlosni znaci upozorenja (davanje znakova i zabrane davanja znakova)", "description": "Zvučni ili svetlosni znaci upozorenja – davanje znakova i zabrane davanja znakova." },
+        { "id": "6-11", "name": "Zaustavljanje i parkiranje (opšta pravila o zaustavljanju i parkiranju, zabrane zaustavljanja i parkiranja, način obezbeđivanja vozila)", "description": "Zaustavljanje i parkiranje – opšta pravila, zabrane i način obezbeđivanja vozila." },
+        { "id": "6-12", "name": "Vučenje vozila (opšte odredbe, način vučenja vozila, broj priključnih vozila u zavisnosti od vrste vozila, zabrane)", "description": "Vučenje vozila – opšte odredbe, način vučenja, broj priključnih vozila i zabrane." },
+        { "id": "6-13", "name": "Upotreba svetala u saobraćaju (upotreba kratkih, odnosno dnevnih, dugih, pozicionih, svetala za maglu, označavanje i osvetljavanje ostalih učesnika kao što su pešaci, biciklisti i dr.)", "description": "Upotreba svetala u saobraćaju – kratka, dnevna, duga, poziciona, svetla za maglu, označavanje pešaka i biciklista." },
+        { "id": "6-14", "name": "Saobraćaj tramvaja, traktora, radnih mašina i zaprežnih vozila", "description": "Saobraćaj tramvaja i drugih vozila na šinama, saobraćaj traktora, radnih mašina i motokultivatora (opšte odredbe, priključci za izvođenje radova, vuča priključnih vozila), saobraćaj zaprežnih vozila i učešće životinja u saobraćaju." },
+        { "id": "6-15", "name": "Saobraćaj bicikala, mopeda, tricikala, četvorocikala i motocikala (način upravljanja, vožnja biciklističkom stazom, odnosno trakom, ograničenja)", "description": "Saobraćaj bicikala, mopeda, tricikala, četvorocikala i motocikala – način upravljanja, vožnja biciklističkom stazom, ograničenja." },
+        { "id": "6-16", "name": "Obaveze vozača prema pešacima (uslovi za bezbedno kretanje pešaka preko kolovoza i po kolovozu)", "description": "Obaveze vozača prema pešacima – uslovi za bezbedno kretanje pešaka preko kolovoza i po kolovozu." },
+        { "id": "6-17", "name": "Saobraćaj na prelazu puta preko železničke pruge (prvenstvo prolaza, način prelaska)", "description": "Saobraćaj na prelazu puta preko železničke pruge – prvenstvo prolaza i način prelaska." },
+        { "id": "6-18", "name": "Saobraćaj na autoputu i motoputu (opšta pravila, zabrane, način kretanja)", "description": "Saobraćaj na autoputu i motoputu – opšta pravila, zabrane i način kretanja." },
+        { "id": "6-19", "name": "Vozila pod pratnjom i vozila sa pravom prvenstva prolaza (pojam, značaj, obaveze vozača i pešaka pri susretu sa tim vozilima, davanje znakova)", "description": "Vozila pod pratnjom i vozila sa pravom prvenstva prolaza – obaveze vozača i pešaka, davanje znakova." },
+        { "id": "6-20", "name": "Upotreba žutog rotacionog ili trepćućeg svetla (pojam, značaj, obaveze vozača i pešaka pri susretu sa tim vozilima, davanje znakova)", "description": "Upotreba žutog rotacionog ili trepćućeg svetla – obaveze vozača i pešaka pri susretu sa tim vozilima." },
+        { "id": "6-21", "name": "Mere predostrožnosti prilikom napuštanja vozila", "description": "Mere predostrožnosti prilikom napuštanja vozila." }
+      ]
+    },
+    {
+      "id": "7",
+      "name": "Ostali učesnici u saobraćaju",
+      "nameShort": "Ostali učesnici",
+      "description": "Pešaci, biciklisti, deca, starija lica i drugi učesnici – njihove karakteristike i uticaj na bezbednost.",
+      "subtopics": [
+        { "id": "7-1", "name": "Pojam i karakteristike učesnika u saobraćaju koje utiču na bezbedno odvijanje saobraćaja", "description": "Pojam i karakteristike učesnika u saobraćaju koje utiču na bezbedno odvijanje saobraćaja." },
+        { "id": "7-2", "name": "Karakteristike ponašanja u saobraćaju dece, starih lica, osoba sa posebnim potrebama, pešaka, biciklista, motociklista i drugih lica", "description": "Karakteristike ponašanja dece, starih lica, osoba sa posebnim potrebama, pešaka, biciklista, motociklista i drugih lica." },
+        { "id": "7-3", "name": "Pojam, karakteristike i uticaj šinskih vozila na bezbedno odvijanje saobraćaja", "description": "Pojam, karakteristike i uticaj šinskih vozila na bezbedno odvijanje saobraćaja." },
+        { "id": "7-4", "name": "Uticaj životinja na bezbedno odvijanje saobraćaja na putu", "description": "Uticaj životinja na bezbedno odvijanje saobraćaja na putu." }
+      ]
+    },
+    {
+      "id": "8",
+      "name": "Saobraćajna signalizacija",
+      "nameShort": "Signalizacija",
+      "description": "Saobraćajni znakovi, oznake na kolovozu, semafori i drugi načini obeležavanja puta.",
+      "subtopics": [
+        { "id": "8-1", "name": "Pojam, značaj, način obeležavanja i postavljanje", "description": "Pojam, značaj, način obeležavanja i postavljanje saobraćajne signalizacije." },
+        { "id": "8-2", "name": "Saobraćajni znakovi, pojmovi (znakovi opasnosti, izričitih naredbi, obaveštenja, dopunske table)", "description": "Saobraćajni znakovi – znakovi opasnosti, izričitih naredbi, obaveštenja, dopunske table." },
+        { "id": "8-3", "name": "Značenje saobraćajnih znakova opasnosti, mesto postavljanja i prestanak važnosti", "description": "Značenje saobraćajnih znakova opasnosti, mesto postavljanja i prestanak važnosti." },
+        { "id": "8-4", "name": "Značenje saobraćajnih znakova izričitih naredbi, mesto postavljanja i prestanak važnosti", "description": "Značenje saobraćajnih znakova izričitih naredbi, mesto postavljanja i prestanak važnosti." },
+        { "id": "8-5", "name": "Značenje saobraćajnih znakova obaveštenja, mesto postavljanja i prestanak važnosti", "description": "Značenje saobraćajnih znakova obaveštenja, mesto postavljanja i prestanak važnosti." },
+        { "id": "8-6", "name": "Značenje dopunskih tabli i način postavljanja", "description": "Značenje dopunskih tabli i način postavljanja." },
+        { "id": "8-7", "name": "Oznake na kolovozu i trotoaru, pojmovi i značenje", "description": "Oznake na kolovozu i trotoaru – pojmovi i značenje." },
+        { "id": "8-8", "name": "Svetlosni saobraćajni znakovi i semafori", "description": "Svetlosni saobraćajni znakovi, pojmovi i značenje, semafori i njihova namena – regulisanje kretanja vozila: po putu, preko raskrsnice, na prelazu preko železničke pruge, regulisanje kretanja na biciklističkim trakama, odnosno stazama i regulisanje kretanja pešaka." },
+        { "id": "8-9", "name": "Svetlosne oznake (podela i način obeležavanja)", "description": "Svetlosne oznake – podela i način obeležavanja." },
+        { "id": "8-10", "name": "Način obeležavanja prelaza puta preko železničke pruge", "description": "Način obeležavanja prelaza puta preko železničke pruge." },
+        { "id": "8-11", "name": "Način obeležavanja prepreka na putu i mesta na kome se izvode radovi na putu", "description": "Način obeležavanja prepreka na putu i mesta na kome se izvode radovi na putu." },
+        { "id": "8-12", "name": "Znaci i naredbe koje daju ovlašćena lica (njihovo značenje i način davanja)", "description": "Znaci i naredbe koje daju ovlašćena lica – njihovo značenje i način davanja." }
+      ]
+    },
+    {
+      "id": "9",
+      "name": "Prevoz tereta i lica vozilima",
+      "nameShort": "Prevoz tereta i lica",
+      "description": "Pravila prevoza tereta i putnika – opterećenje, vanredni prevoz i ograničenja.",
+      "subtopics": [
+        { "id": "9-1", "name": "Opšte odredbe, pojam, značaj i zabrane", "description": "Opšte odredbe o prevozu tereta i lica – pojam, značaj i zabrane." },
+        { "id": "9-2", "name": "Opterećenje vozila (osovinsko opterećenje, ukupna masa, nosivost, najveća dozvoljena masa, najveća dozvoljena ukupna masa, smeštaj i obezbeđenje tereta)", "description": "Opterećenje vozila – osovinsko opterećenje, ukupna masa, nosivost, smeštaj i obezbeđenje tereta." },
+        { "id": "9-3", "name": "Vanredni prevoz (pojam, uslovi pod kojim se obavlja, dozvola)", "description": "Vanredni prevoz – pojam, uslovi pod kojim se obavlja i dozvola." },
+        { "id": "9-4", "name": "Prevoz lica vozilima (pojam i značaj, opterećenje vozila, način prevoza, ograničenja)", "description": "Prevoz lica vozilima – pojam, značaj, opterećenje, način prevoza i ograničenja." }
+      ]
+    },
+    {
+      "id": "10",
+      "name": "Vozačke dozvole",
+      "nameShort": "Vozačke dozvole",
+      "description": "Uslovi za dobijanje vozačke dozvole, kategorije vozila, probna dozvola i osposobljavanje kandidata.",
+      "subtopics": [
+        { "id": "10-1", "name": "Pojam i značaj", "description": "Pojam i značaj vozačke dozvole." },
+        { "id": "10-2", "name": "Propisi za pravo na upravljanje vozilom", "description": "Propisi vezani za pravo na upravljanje vozilom u saobraćaju na putu, uslovi za upravljanje vozilom, starosni uslovi za dobijanje vozačke dozvole, postupak izdavanja vozačke dozvole, zdravstveni pregledi, vozačke dozvole za kategorije motornih vozila, oduzimanje vozačke dozvole, izvršenje mere zabrane upravljanja, profesionalni vozači, vozači tramvaja, vozači turističkog voza." },
+        { "id": "10-3", "name": "Probna vozačka dozvola (pojam, značaj i uslovi za upravljanje vozilom)", "description": "Probna vozačka dozvola – pojam, značaj i uslovi za upravljanje vozilom." },
+        { "id": "10-4", "name": "Osposobljavanje kandidata za vozače (teorijska obuka, praktična obuka i vozački ispit)", "description": "Osposobljavanje kandidata za vozače – teorijska obuka, praktična obuka i vozački ispit." }
+      ]
+    },
+    {
+      "id": "11",
+      "name": "Dužnosti učesnika u saobraćaju u slučaju saobraćajne nezgode",
+      "nameShort": "Dužnosti pri nezgodi",
+      "description": "Šta raditi u slučaju saobraćajne nezgode – obaveze vozača, policije, zdravstvene ustanove i ostalih.",
+      "subtopics": [
+        { "id": "11-1", "name": "Postupak u slučaju saobraćajne nezgode (pojam, dužnosti i obaveze vozača i lica koje se zatekne na mestu nezgode)", "description": "Postupak u slučaju saobraćajne nezgode – dužnosti i obaveze vozača i lica koje se zatekne na mestu nezgode." },
+        { "id": "11-2", "name": "Dužnost i obaveze policije, zdravstvene ustanove, upravljača puta, osiguravajućih društava", "description": "Dužnost i obaveze policije, zdravstvene ustanove, upravljača puta, osiguravajućih društava." },
+        { "id": "11-3", "name": "Evropski izveštaj o saobraćajnoj nezgodi", "description": "Evropski izveštaj o saobraćajnoj nezgodi – sadržaj i način popunjavanja." }
+      ]
+    },
+    {
+      "id": "12",
+      "name": "Posebne mere i ovlašćenja",
+      "nameShort": "Posebne mere",
+      "description": "Ovlašćenja policije – isključenje vozača i vozila iz saobraćaja, kontrolni pregledi, merenje opterećenja.",
+      "subtopics": [
+        { "id": "12-1", "name": "Posebne mere i ovlašćenja policije", "description": "Isključenje vozača iz saobraćaja, zadržavanje vozača, upućivanje vozača na kontrolni lekarski pregled, utvrđivanje prisustva alkohola i/ili psihoaktivnih supstanci kod učesnika u saobraćaju, zaustavljanje vozila, snimanje saobraćaja i dokumentovanje prekršaja, privremeno oduzimanje predmeta prekršaja, oduzimanje obrasca strane vozačke dozvole, isključenje vozila iz saobraćaja, upućivanje na kontrolni tehnički pregled vozila, uklanjanje i premeštanje vozila, postavljanje uređaja kojima se sprečava odvoženje vozila, merenje osovinskog opterećenja i ukupne mase vozila." }
+      ]
+    },
+    {
+      "id": "13",
+      "name": "Radnje vozilom i postupanje vozača u saobraćaju na putu",
+      "nameShort": "Radnje vozilom",
+      "description": "Praktične radnje vozilom i postupanje vozača u različitim saobraćajnim situacijama.",
+      "subtopics": [
+        { "id": "13-1", "name": "Radnje vozilom u saobraćaju na putu", "description": "Radnje vozilom u saobraćaju na putu: polazak sa mesta, uključivanje vozila u saobraćaj na putu, vožnja unapred, vožnja unazad, promena pravca kretanja i zaustavljanje vozila, održavanje brzine kretanja vozila u zavisnosti od saobraćajne situacije i uslova puta i vremenskih uslova, skretanje, polukružno okretanje, obilaženje, mimoilaženje, preticanje, promena saobraćajne trake, zaustavljanje i naglo kočenje, korišćenje saobraćajne trake za usporenje i ubrzavanje, propuštanje drugih učesnika u saobraćaju, ustupanje prava prvenstva prolaza." },
+        { "id": "13-2", "name": "Postupanje vozača u različitim situacijama", "description": "Postupanje vozača: pri nailasku i prolasku kroz raskrsnicu na kojoj je saobraćaj regulisan pravilom desne strane, saobraćajnim znakom, svetlosnim saobraćajnim znakom, znacima i naredbama koje daje ovlašćeno lice, odnosno nailasku na raskrsnicu sa kružnim tokom saobraćaja, prilikom izbora brzine kretanja vozila u zavisnosti od saobraćajne situacije, uslova puta i vremenskih uslova, pri nailasku na pešački prelaz, u odnosu na pešake, bicikliste i druge učesnike u saobraćaju, prilikom prelaska preko železničke i tramvajske pruge i vožnje kroz tunel, prilikom smanjene vidljivosti i u uslovima padavina i prilikom kretanja putem na kojem se izvode radovi." }
+      ]
+    },
+    {
+      "id": "14",
+      "name": "Posledice nepoštovanja propisa iz oblasti bezbednosti saobraćaja",
+      "nameShort": "Posledice propisa",
+      "description": "Štetne posledice kršenja propisa i kaznene mere – kazneni poeni, novčana kazna, mere bezbednosti.",
+      "subtopics": [
+        { "id": "14-1", "name": "Moguće štetne posledice nepoštovanja propisa", "description": "Moguće štetne posledice nepoštovanja propisa iz oblasti bezbednosti saobraćaja." },
+        { "id": "14-2", "name": "Kaznene mere za učinioce povreda odredaba propisa iz oblasti bezbednosti saobraćaja (kazneni poeni, kazna zatvora, novčana kazna, mere bezbednosti i zaštitne mere)", "description": "Kaznene mere za učinioce povreda – kazneni poeni, kazna zatvora, novčana kazna, mere bezbednosti i zaštitne mere." }
+      ]
+    }
+  ]
+}
