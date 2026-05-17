@@ -38,7 +38,9 @@
   font-size: 0.75rem;
   font-weight: 600;
   cursor: pointer;
-  transition: background var(--transition), border-color var(--transition);
+  transition:
+    background var(--transition),
+    border-color var(--transition);
 }
 
 .nav-theme-btn:hover {

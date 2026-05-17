@@ -148,7 +148,9 @@ function showRenderError(err) {
         <summary class="load-error-details__summary">Tehnički detalji</summary>
         <pre class="load-error-details__pre">${escapeHtml(msg)}</pre>
       </details>
-      <p><button type="button" class="btn-retry" id="btnRenderErrorRetry">Osveži stranicu</button></p>
+      <p>
+        <button type="button" class="btn-retry" id="btnRenderErrorRetry">Osveži stranicu</button>
+      </p>
     </div>
   `;
   detail.querySelector('#btnRenderErrorRetry')?.addEventListener('click', () => {
@@ -218,9 +220,7 @@ async function render() {
   lastRouteForTransition = { ...route };
 
   const useViewTransition =
-    typeof document.startViewTransition === 'function' &&
-    !isSimpleNav &&
-    !isFilterOnlyUpdate;
+    typeof document.startViewTransition === 'function' && !isSimpleNav && !isFilterOnlyUpdate;
 
   if (useViewTransition) {
     try {

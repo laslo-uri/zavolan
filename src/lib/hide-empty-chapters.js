@@ -17,7 +17,9 @@ export function setHideEmptyChapters(value) {
   } catch {
     void 0;
   }
-  window.dispatchEvent(new CustomEvent(`${APP_SLUG}-hide-empty-chapters-changed`, { detail: { value } }));
+  window.dispatchEvent(
+    new CustomEvent(`${APP_SLUG}-hide-empty-chapters-changed`, { detail: { value } })
+  );
 }
 
 export function filterTopicsForDisplay(topics, counts, hideEmpty) {

@@ -5,7 +5,7 @@
   "description": "ZaVolan — teorijski ispit: vežbanje pitanja iz bezbednosti saobraćaja",
   "type": "module",
   "engines": {
-    "node": ">=20"
+    "node": ">=22"
   },
   "scripts": {
     "dev": "vite",

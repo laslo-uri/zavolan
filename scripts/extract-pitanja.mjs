@@ -79,7 +79,9 @@ function extractQuestionFromHtml(html, questionIndex, opts = {}) {
       }
       const tacnoResenje = choices.filter((c) => c.tacan).map((c) => c.tekst);
       const brojMatchSimple = choicesBlock.match(/Broj potrebnih odgovora:\s*(\d+)/);
-      const brojTacnih = brojMatchSimple ? parseInt(brojMatchSimple[1], 10) : (tacnoResenje.length || 1);
+      const brojTacnih = brojMatchSimple
+        ? parseInt(brojMatchSimple[1], 10)
+        : tacnoResenje.length || 1;
 
       return {
         tekst,
@@ -95,7 +97,9 @@ function extractQuestionFromHtml(html, questionIndex, opts = {}) {
 
   const block = containerMatch[1];
 
-  const textMatch = block.match(new RegExp(`<label id="qText_${questionIndex}"[^>]*>([^<]*)</label>`, 's'));
+  const textMatch = block.match(
+    new RegExp(`<label id="qText_${questionIndex}"[^>]*>([^<]*)</label>`, 's')
+  );
   const tekst = normalizeText(textMatch ? textMatch[1] : '');
 
   if (!tekst) return null;
@@ -136,7 +140,9 @@ function extractQuestionFromHtml(html, questionIndex, opts = {}) {
 
   const tacnoResenje = odgovori.filter((o) => o.tacan).map((o) => o.tekst);
   const brojTacnihMatch = block.match(/Broj potrebnih odgovora:\s*(\d+)/);
-  const brojTacnihFinal = brojTacnihMatch ? parseInt(brojTacnihMatch[1], 10) : (tacnoResenje.length || 1);
+  const brojTacnihFinal = brojTacnihMatch
+    ? parseInt(brojTacnihMatch[1], 10)
+    : tacnoResenje.length || 1;
 
   // Slika – prioritet: eksplicitno sačuvane slike u root (N.jpeg/jpg/png), zatim N_files/QuestionsPracticeImage
   let slika = null;
@@ -170,7 +176,10 @@ function extractQuestionFromHtml(html, questionIndex, opts = {}) {
 
   const explMatch = block.match(/explBody_[^>]*>([^<]*)</);
   let objasnjenje = explMatch ? normalizeText(explMatch[1]) : null;
-  if (objasnjenje === 'Nedostaje tekst objašnјenјa' || objasnjenje === 'Nedostaje tekst objašnjenja') {
+  if (
+    objasnjenje === 'Nedostaje tekst objašnјenјa' ||
+    objasnjenje === 'Nedostaje tekst objašnjenja'
+  ) {
     objasnjenje = null;
   }
 
@@ -235,7 +244,9 @@ function extractFromFolder(folderName, maxQuestions) {
 
   const match = folderName.match(/podoblast-?(\d+)-(\d+)/i);
   if (!match) {
-    console.error('Naziv foldera mora biti podoblastX-Y ili podoblast-X-Y (npr. podoblast1-1, podoblast-1-3)');
+    console.error(
+      'Naziv foldera mora biti podoblastX-Y ili podoblast-X-Y (npr. podoblast1-1, podoblast-1-3)'
+    );
     process.exit(1);
   }
   const podoblastId = `${match[1]}-${match[2]}`;

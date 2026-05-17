@@ -173,7 +173,9 @@
   background: transparent;
   color: var(--color-text-muted);
   cursor: pointer;
-  transition: background 0.2s ease, color 0.2s ease;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
   margin-inline-end: var(--nav-inline-pad);
 }
 
@@ -187,7 +189,7 @@
   outline-offset: 2px;
 }
 
-.nav-hide-empty-btn[aria-pressed="true"] {
+.nav-hide-empty-btn[aria-pressed='true'] {
   color: var(--color-primary);
   background: var(--color-primary-subtle);
 }
@@ -211,7 +213,9 @@
   font-family: var(--font-body);
   font-size: 0.9rem;
   cursor: pointer;
-  transition: background 0.2s ease, color 0.2s ease;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
   text-decoration: none;
 }
 
@@ -252,9 +256,17 @@
   justify-content: center;
 }
 
-.nav-item:hover { background: rgba(255, 255, 255, 0.08); color: var(--color-nav-hover); }
-.nav-item:active { transform: scale(0.98); }
-.nav-item.active { background: var(--color-primary); color: var(--color-text-on-primary); }
+.nav-item:hover {
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--color-nav-hover);
+}
+.nav-item:active {
+  transform: scale(0.98);
+}
+.nav-item.active {
+  background: var(--color-primary);
+  color: var(--color-text-on-primary);
+}
 
 .nav-item.active .topic-count {
   color: var(--color-text-on-primary);
@@ -278,12 +290,24 @@
   animation: navSubitemIn var(--duration-ui) var(--ease-smooth) both;
 }
 
-.nav-sublist .nav-subitem:nth-child(1) { animation-delay: 0.02s; }
-.nav-sublist .nav-subitem:nth-child(2) { animation-delay: 0.05s; }
-.nav-sublist .nav-subitem:nth-child(3) { animation-delay: 0.08s; }
-.nav-sublist .nav-subitem:nth-child(4) { animation-delay: 0.11s; }
-.nav-sublist .nav-subitem:nth-child(5) { animation-delay: 0.14s; }
-.nav-sublist .nav-subitem:nth-child(n+6) { animation-delay: 0.17s; }
+.nav-sublist .nav-subitem:nth-child(1) {
+  animation-delay: 0.02s;
+}
+.nav-sublist .nav-subitem:nth-child(2) {
+  animation-delay: 0.05s;
+}
+.nav-sublist .nav-subitem:nth-child(3) {
+  animation-delay: 0.08s;
+}
+.nav-sublist .nav-subitem:nth-child(4) {
+  animation-delay: 0.11s;
+}
+.nav-sublist .nav-subitem:nth-child(5) {
+  animation-delay: 0.14s;
+}
+.nav-sublist .nav-subitem:nth-child(n + 6) {
+  animation-delay: 0.17s;
+}
 
 @media (prefers-reduced-motion: reduce) {
   .nav-sublist .nav-subitem {
@@ -310,7 +334,9 @@
   font-size: 0.85rem;
   color: var(--color-text-muted);
   text-decoration: none;
-  transition: color var(--transition), background var(--transition);
+  transition:
+    color var(--transition),
+    background var(--transition);
   border-radius: var(--radius-sm);
   margin: 0;
 }
@@ -334,7 +360,10 @@
   color: inherit;
 }
 
-.nav-subitem:hover { color: var(--color-nav-hover); background: rgba(255,255,255,0.04); }
+.nav-subitem:hover {
+  color: var(--color-nav-hover);
+  background: rgba(255, 255, 255, 0.04);
+}
 .nav-subitem.active {
   color: var(--color-primary);
   font-weight: 600;

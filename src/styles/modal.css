@@ -8,7 +8,9 @@
   padding: 1rem;
   opacity: 0;
   visibility: hidden;
-  transition: opacity 0.25s ease, visibility 0.25s ease;
+  transition:
+    opacity 0.25s ease,
+    visibility 0.25s ease;
 }
 
 .modal-overlay.visible {
@@ -86,7 +88,9 @@
   font-size: 0.9rem;
   text-align: left;
   cursor: pointer;
-  transition: background var(--transition), color var(--transition);
+  transition:
+    background var(--transition),
+    color var(--transition);
   border-radius: 0;
 }
 
@@ -139,7 +143,9 @@
   font-size: 0.95rem;
   font-weight: 500;
   cursor: pointer;
-  transition: background var(--transition), border-color var(--transition);
+  transition:
+    background var(--transition),
+    border-color var(--transition);
 }
 
 .submit-confirm-modal__actions .btn-secondary:hover {
@@ -310,7 +316,7 @@
   background-position: center;
 }
 
-.question-card.revealed .answer.answer-selectable[data-correct="true"]::before {
+.question-card.revealed .answer.answer-selectable[data-correct='true']::before {
   border-color: color-mix(in srgb, var(--color-success) 92%, #0d3d2f);
   background-color: var(--color-success);
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='3.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6.5 12.5l4 4 8-9'/%3E%3C/svg%3E");
@@ -322,21 +328,28 @@
     inset 0 1px 0 rgba(255, 255, 255, 0.14);
 }
 
-.question-card.revealed .answer.answer-selectable[data-correct="true"]:has(input[type='radio'])::before {
+.question-card.revealed
+  .answer.answer-selectable[data-correct='true']:has(input[type='radio'])::before {
   border-radius: 50%;
 }
 
-.question-card.revealed .answer.answer-selectable[data-correct="true"]:has(input[type='checkbox'])::before {
+.question-card.revealed
+  .answer.answer-selectable[data-correct='true']:has(input[type='checkbox'])::before {
   border-radius: var(--radius-xs-alt);
 }
 
 .answer-selectable:has(input:focus-visible)::before {
-  box-shadow: 0 0 0 2px var(--color-bg), 0 0 0 4px var(--color-primary);
+  box-shadow:
+    0 0 0 2px var(--color-bg),
+    0 0 0 4px var(--color-primary);
   outline: none;
 }
 
 .answer-selectable:has(input:checked):has(input:focus-visible)::before {
-  box-shadow: 0 0 0 2px var(--color-bg), 0 0 0 4px var(--color-primary), 0 0 0 7px var(--color-primary-pill-hover);
+  box-shadow:
+    0 0 0 2px var(--color-bg),
+    0 0 0 4px var(--color-primary),
+    0 0 0 7px var(--color-primary-pill-hover);
 }
 
 .answer-selectable input[type='checkbox'],
@@ -365,17 +378,17 @@
   background: rgba(15, 118, 110, 0.08);
 }
 
-.question-card.revealed .answer.answer-selectable[data-correct="false"]:hover {
+.question-card.revealed .answer.answer-selectable[data-correct='false']:hover {
   border-color: color-mix(in srgb, var(--color-error) 70%, var(--color-border));
   background: rgba(239, 68, 68, 0.16);
 }
 
-.question-card.revealed .answer.answer-selectable[data-correct="true"]:hover {
+.question-card.revealed .answer.answer-selectable[data-correct='true']:hover {
   border-color: var(--color-success);
   background: color-mix(in srgb, var(--color-success-bg) 75%, rgba(16, 163, 127, 0.22));
 }
 
-.question-card.revealed .answer.answer-selectable[data-correct="false"]:has(input:checked) {
+.question-card.revealed .answer.answer-selectable[data-correct='false']:has(input:checked) {
   border-color: var(--color-error);
   background: var(--color-error-bg);
   color: var(--color-error);
@@ -383,7 +396,7 @@
   border-width: 1.5px;
 }
 
-.question-card.revealed .answer.answer-selectable[data-correct="false"]:has(input:checked)::before {
+.question-card.revealed .answer.answer-selectable[data-correct='false']:has(input:checked)::before {
   border-color: #dc2626;
   background-color: var(--color-error);
   box-shadow:
@@ -430,4 +443,3 @@
   color: var(--color-text);
   border-width: 1.5px;
 }
-

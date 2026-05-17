@@ -155,9 +155,7 @@ export function renderQuestionsView(questions, results = null, viewOpts = {}) {
   const timerNavEmbed =
     !isResults && showTimerMount && !isBookmarksQuizPage ? renderExamTimerNavEmbed() : '';
   const navAria =
-    timerNavEmbed !== ''
-      ? 'Navigacija kroz pitanja i preostalo vreme'
-      : 'Navigacija kroz pitanja';
+    timerNavEmbed !== '' ? 'Navigacija kroz pitanja i preostalo vreme' : 'Navigacija kroz pitanja';
 
   const kbdHint =
     !isResults && questions.length > 1

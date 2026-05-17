@@ -18,8 +18,7 @@ import { clearQuizView } from './quiz-state.js';
 function subtopicProgressSuffix(subtopicId) {
   const r = getSubtopicLastResult(subtopicId);
   if (!r) return '';
-  const cls =
-    r.lastPct >= 80 ? 'subtopic-progress subtopic-progress--strong' : 'subtopic-progress';
+  const cls = r.lastPct >= 80 ? 'subtopic-progress subtopic-progress--strong' : 'subtopic-progress';
   return `<span class="${cls}" title="Poslednji rezultat: ${r.lastPct}%">${r.lastPct}%</span>`;
 }
 
@@ -47,10 +46,12 @@ export async function renderTopicRoutes(
             ? `<p class="page-meta topics-list-empty">Nema oblasti sa pitanjima za prikaz. Isključite „Sakrij oblasti bez pitanja“ na početnoj ili u meniju pored „Sve teme“.</p>`
             : `<div class="compact-topic-list${filterOnly ? ' compact-topic-list--filter-only' : ''}">
           ${topicsForList
-            .map(
-              (t) => {
-                const topicCount = (t.subtopics || []).reduce((sum, s) => sum + (counts[s.id] ?? 0), 0);
-                return `
+            .map((t) => {
+              const topicCount = (t.subtopics || []).reduce(
+                (sum, s) => sum + (counts[s.id] ?? 0),
+                0
+              );
+              return `
             <section class="compact-topic">
               <a href="/${t.id}" class="compact-topic-header">
                 <span class="topic-list-icon">${getCategoryIcon(t.id)}</span>
@@ -59,18 +60,15 @@ export async function renderTopicRoutes(
               </a>
               <div class="compact-subtopics">
                 ${(t.subtopics || [])
-                  .map(
-                    (s, i) => {
-                      const n = counts[s.id] ?? 0;
-                      return `<a href="/${t.id}/${formatSubtopicPathSegment(t.id, s.id)}" class="compact-subtopic-pill">${i + 1}. ${escapeHtml(s.name)}<span class="item-count"> (${n})</span>${subtopicProgressSuffix(s.id)}</a>`;
-                    }
-                  )
+                  .map((s, i) => {
+                    const n = counts[s.id] ?? 0;
+                    return `<a href="/${t.id}/${formatSubtopicPathSegment(t.id, s.id)}" class="compact-subtopic-pill">${i + 1}. ${escapeHtml(s.name)}<span class="item-count"> (${n})</span>${subtopicProgressSuffix(s.id)}</a>`;
+                  })
                   .join('')}
               </div>
             </section>
           `;
-              }
-            )
+            })
             .join('')}
         </div>`
         }
@@ -117,17 +115,18 @@ export async function renderTopicRoutes(
                 ? `<p class="home-no-matching-topics">Nijedna oblast nema učitana pitanja za prikaz. Isključite filter iznad ili proverite bazu.</p>`
                 : `<div class="home-topic-chips">
             ${topicsForHome
-              .map(
-                (t) => {
-                  const topicCount = (t.subtopics || []).reduce((sum, s) => sum + (counts[s.id] ?? 0), 0);
-                  return `
+              .map((t) => {
+                const topicCount = (t.subtopics || []).reduce(
+                  (sum, s) => sum + (counts[s.id] ?? 0),
+                  0
+                );
+                return `
               <a href="/${t.id}" class="topic-chip">
                 <span class="topic-chip-icon">${getCategoryIcon(t.id)}</span>
                 <span class="topic-chip-text">${escapeHtml(getTopicDisplayName(t, true))}<span class="item-count"> (${topicCount})</span></span>
               </a>
             `;
-                }
-              )
+              })
               .join('')}
           </div>`
             }
@@ -177,7 +176,9 @@ export async function renderTopicRoutes(
     clearQuizView();
     const subtopics = filterSubtopicsForDisplay(topic.subtopics, counts, hideEmpty);
     const topicIcon = getCategoryIcon(topicId);
-    const topicDescBlock = topic.description ? `<div class="page-description"><p>${escapeHtml(topic.description)}</p></div>` : '';
+    const topicDescBlock = topic.description
+      ? `<div class="page-description"><p>${escapeHtml(topic.description)}</p></div>`
+      : '';
     if (subtopics.length === 0) {
       const hint = hideEmpty
         ? `<p class="page-meta filter-empty-hint">Isključite opciju „Sakrij oblasti bez pitanja“ na početnoj ili u meniju da vidite sve podoblasti.</p>`
@@ -203,12 +204,10 @@ export async function renderTopicRoutes(
         <div class="compact-topic">
           <div class="compact-subtopics">
             ${subtopics
-              .map(
-                (s, i) => {
-                  const n = counts[s.id] ?? 0;
-                  return `<a href="/${topicId}/${formatSubtopicPathSegment(topicId, s.id)}" class="compact-subtopic-pill" title="${escapeHtml(s.description || s.name)}">${i + 1}. ${escapeHtml(s.name)}<span class="item-count"> (${n})</span>${subtopicProgressSuffix(s.id)}</a>`;
-                }
-              )
+              .map((s, i) => {
+                const n = counts[s.id] ?? 0;
+                return `<a href="/${topicId}/${formatSubtopicPathSegment(topicId, s.id)}" class="compact-subtopic-pill" title="${escapeHtml(s.description || s.name)}">${i + 1}. ${escapeHtml(s.name)}<span class="item-count"> (${n})</span>${subtopicProgressSuffix(s.id)}</a>`;
+              })
               .join('')}
           </div>
         </div>
@@ -218,7 +217,9 @@ export async function renderTopicRoutes(
   }
 
   const topicIcon = getCategoryIcon(topicId);
-  const descriptionBlock = subtopic.description ? `<div class="page-description"><p>${escapeHtml(subtopic.description)}</p></div>` : '';
+  const descriptionBlock = subtopic.description
+    ? `<div class="page-description"><p>${escapeHtml(subtopic.description)}</p></div>`
+    : '';
   detail.innerHTML = `
     <article class="page">
       <h2 class="page-title">${escapeHtml(subtopic.name)}</h2>
@@ -245,7 +246,9 @@ export async function renderTopicRoutes(
 
   if (!questionsRaw.length) {
     clearQuizView();
-    const descBlock = subtopic.description ? `<div class="page-description"><p>${escapeHtml(subtopic.description)}</p></div>` : '';
+    const descBlock = subtopic.description
+      ? `<div class="page-description"><p>${escapeHtml(subtopic.description)}</p></div>`
+      : '';
     detail.innerHTML = `
       <article class="page">
         <h2 class="page-title">${escapeHtml(subtopic.name)}</h2>

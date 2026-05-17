@@ -47,7 +47,8 @@ export function redirectOldBookmarksPath() {
   if (parts[0] !== 'obelezeno') return;
   const qPart = parts[1];
   const questionIndex = qPart != null && /^\d+$/.test(qPart) ? parseInt(qPart, 10) : null;
-  const want = pathForTopic(BOOKMARKS_TOPIC_ID, null, questionIndex) + location.search + location.hash;
+  const want =
+    pathForTopic(BOOKMARKS_TOPIC_ID, null, questionIndex) + location.search + location.hash;
   if (location.pathname + location.search + location.hash !== want) {
     history.replaceState(null, '', want);
   }

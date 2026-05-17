@@ -1,0 +1,2 @@
+# Normalize text files to LF so Prettier --check matches on Linux CI (GitHub Actions).
+* text=auto eol=lf

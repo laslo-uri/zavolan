@@ -29,15 +29,15 @@ function siteUrlMetaPlugin() {
       return html
         .replace(
           /<meta property="og:locale" content="sr_RS">/,
-          `<meta property="og:locale" content="sr_RS">\n  <meta property="og:url" content="${siteUrl}/">`,
+          `<meta property="og:locale" content="sr_RS">\n  <meta property="og:url" content="${siteUrl}/">`
         )
         .replace(
           /<meta property="og:image" content="\/og-image\.png">/,
-          `<meta property="og:image" content="${siteUrl}/og-image.png">`,
+          `<meta property="og:image" content="${siteUrl}/og-image.png">`
         )
         .replace(
           /<meta name="twitter:image" content="\/og-image\.png">/,
-          `<meta name="twitter:image" content="${siteUrl}/og-image.png">`,
+          `<meta name="twitter:image" content="${siteUrl}/og-image.png">`
         );
     },
   };
@@ -47,76 +47,76 @@ export default defineConfig(({ mode }) => {
   const enablePwa = mode !== 'test';
 
   return {
-  base: '/',
-  publicDir: 'public',
-  plugins: [
-    siteUrlMetaPlugin(),
-    {
-      name: 'spa-fallback',
-      configureServer(server) {
-        server.middlewares.use(spaFallbackMiddleware());
+    base: '/',
+    publicDir: 'public',
+    plugins: [
+      siteUrlMetaPlugin(),
+      {
+        name: 'spa-fallback',
+        configureServer(server) {
+          server.middlewares.use(spaFallbackMiddleware());
+        },
+        configurePreviewServer(server) {
+          server.middlewares.use(spaFallbackMiddleware());
+        },
       },
-      configurePreviewServer(server) {
-        server.middlewares.use(spaFallbackMiddleware());
-      },
-    },
-    ...(enablePwa
-      ? [
-          VitePWA({
-            registerType: 'autoUpdate',
-            includeAssets: [
-              'favicon.svg',
-              'logo.svg',
-              'data.json',
-              'og-image.png',
-              'theme-boot.js',
-              'critical-shell.css',
-            ],
-            workbox: {
-              globPatterns: ['**/*.{js,css,html,ico,png,svg,webmanifest,json,woff2}'],
-              globIgnores: ['**/database/podoblast*.json'],
-              maximumFileSizeToCacheInBytes: 6 * 1024 * 1024,
-            },
-            manifest: {
-              name: `${APP_NAME} — priprema za vozački ispit`,
-              short_name: APP_NAME,
-              description: 'Vežbanje pitanja teorijskog ispita iz bezbednosti saobraćaja.',
-              start_url: '/',
-              scope: '/',
-              display: 'standalone',
-              background_color: '#212121',
-              theme_color: '#212121',
-              categories: ['education', 'utilities'],
-              icons: [
-                {
-                  src: 'pwa-192.png',
-                  sizes: '192x192',
-                  type: 'image/png',
-                  purpose: 'any',
-                },
-                {
-                  src: 'pwa-512.png',
-                  sizes: '512x512',
-                  type: 'image/png',
-                  purpose: 'any',
-                },
-                {
-                  src: 'pwa-512.png',
-                  sizes: '512x512',
-                  type: 'image/png',
-                  purpose: 'maskable',
-                },
-                {
-                  src: 'logo.svg',
-                  sizes: 'any',
-                  type: 'image/svg+xml',
-                  purpose: 'any',
-                },
+      ...(enablePwa
+        ? [
+            VitePWA({
+              registerType: 'autoUpdate',
+              includeAssets: [
+                'favicon.svg',
+                'logo.svg',
+                'data.json',
+                'og-image.png',
+                'theme-boot.js',
+                'critical-shell.css',
               ],
-            },
-          }),
-        ]
-      : []),
-  ],
-};
+              workbox: {
+                globPatterns: ['**/*.{js,css,html,ico,png,svg,webmanifest,json,woff2}'],
+                globIgnores: ['**/database/podoblast*.json'],
+                maximumFileSizeToCacheInBytes: 6 * 1024 * 1024,
+              },
+              manifest: {
+                name: `${APP_NAME} — priprema za vozački ispit`,
+                short_name: APP_NAME,
+                description: 'Vežbanje pitanja teorijskog ispita iz bezbednosti saobraćaja.',
+                start_url: '/',
+                scope: '/',
+                display: 'standalone',
+                background_color: '#212121',
+                theme_color: '#212121',
+                categories: ['education', 'utilities'],
+                icons: [
+                  {
+                    src: 'pwa-192.png',
+                    sizes: '192x192',
+                    type: 'image/png',
+                    purpose: 'any',
+                  },
+                  {
+                    src: 'pwa-512.png',
+                    sizes: '512x512',
+                    type: 'image/png',
+                    purpose: 'any',
+                  },
+                  {
+                    src: 'pwa-512.png',
+                    sizes: '512x512',
+                    type: 'image/png',
+                    purpose: 'maskable',
+                  },
+                  {
+                    src: 'logo.svg',
+                    sizes: 'any',
+                    type: 'image/svg+xml',
+                    purpose: 'any',
+                  },
+                ],
+              },
+            }),
+          ]
+        : []),
+    ],
+  };
 });

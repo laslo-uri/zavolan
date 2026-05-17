@@ -58,7 +58,9 @@ export async function renderPage(
         <div class="empty-state">
           <div class="empty-state-icon" aria-hidden="true">404</div>
           <h2 class="page-title">Stranica nije pronađena</h2>
-          <p class="page-meta">Nema teme „${escapeHtml(topicId)}”. Proverite adresu ili se vratite na početnu.</p>
+          <p class="page-meta">
+            Nema teme „${escapeHtml(topicId)}”. Proverite adresu ili se vratite na početnu.
+          </p>
           <p><a href="/" class="soft-empty__link">Početna strana</a></p>
         </div>
       </article>

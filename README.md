@@ -4,29 +4,29 @@ Practice for the Serbian theoretical driving exam. Topic tree: `public/data.json
 
 ## Layout
 
-| Path | |
-|------|--|
-| `src/` | Vite SPA |
-| `public/data.json` | Topic / subtopic tree |
+| Path               |                                                    |
+| ------------------ | -------------------------------------------------- |
+| `src/`             | Vite SPA                                           |
+| `public/data.json` | Topic / subtopic tree                              |
 | `public/database/` | Questions (local; see `public/database/README.md`) |
-| `scripts/` | Extract, image sync, handbook tooling |
-| `docs/` | Handbook sources (local) |
+| `scripts/`         | Extract, image sync, handbook tooling              |
+| `docs/`            | Handbook sources (local)                           |
 
 ## Commands
 
-| Command | |
-|---------|--|
-| `npm run dev` | Dev server |
-| `npm run build` | Build → `dist/` |
-| `npm run preview` | Serve `dist/` |
-| `npm run lint` | ESLint |
-| `npm test` | Vitest |
-| `npm run extract -- <folder> [limit]` | HTML scrape → `public/database/` |
-| `npm run sync-images` | Numbered JPEGs in scrape folder → database |
-| `npm run generate-counts` | Refresh `counts.json` |
-| `npm run report-coverage` | Subtopics with / without questions |
-| `npm run manual:html` | Handbook HTML from local `docs/*.md` |
-| `npm run generate-pwa-icons` | Sharp: regenerate `public/pwa-*.png`, `apple-touch-icon.png`, `og-image.png` from `logo.svg` |
+| Command                               |                                                                                              |
+| ------------------------------------- | -------------------------------------------------------------------------------------------- |
+| `npm run dev`                         | Dev server                                                                                   |
+| `npm run build`                       | Build → `dist/`                                                                              |
+| `npm run preview`                     | Serve `dist/`                                                                                |
+| `npm run lint`                        | ESLint                                                                                       |
+| `npm test`                            | Vitest                                                                                       |
+| `npm run extract -- <folder> [limit]` | HTML scrape → `public/database/`                                                             |
+| `npm run sync-images`                 | Numbered JPEGs in scrape folder → database                                                   |
+| `npm run generate-counts`             | Refresh `counts.json`                                                                        |
+| `npm run report-coverage`             | Subtopics with / without questions                                                           |
+| `npm run manual:html`                 | Handbook HTML from local `docs/*.md`                                                         |
+| `npm run generate-pwa-icons`          | Sharp: regenerate `public/pwa-*.png`, `apple-touch-icon.png`, `og-image.png` from `logo.svg` |
 
 PWA/OG PNGs are committed so production deploy does not need Sharp. Regenerate branding assets after changing `logo.svg`:
 

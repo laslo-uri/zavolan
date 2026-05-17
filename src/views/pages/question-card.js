@@ -21,12 +21,14 @@ export function renderQuestionCard(q, i, ctx) {
   const fieldKey = fieldKeyForQuestion(q);
   const compositeKey = q._compositeKey ?? fieldKey;
   const { ordered, correctIndices } = getDisplayAnswerOrder(q);
-  const requiredCount = correctIndices.length > 0 ? correctIndices.length : (q.correctAnswerCount ?? 1);
+  const requiredCount =
+    correctIndices.length > 0 ? correctIndices.length : (q.correctAnswerCount ?? 1);
   const isSingle = requiredCount <= 1;
   const userSelected = results?.get(fieldKey);
   const isCorrect =
     userSelected != null
-      ? userSelected.length === correctIndices.length && userSelected.every((idx) => correctIndices.includes(idx))
+      ? userSelected.length === correctIndices.length &&
+        userSelected.every((idx) => correctIndices.includes(idx))
       : null;
 
   const answersHtml = ordered
@@ -41,8 +43,17 @@ export function renderQuestionCard(q, i, ctx) {
       }
       const checked = userSelected?.includes(idx) ? 'checked' : '';
       return html`
-        <label class="answer answer-selectable ${stateClass}" data-index="${idx}" data-correct="${correct}">
-          <input type="${isSingle ? 'radio' : 'checkbox'}" name="${fieldKey}" value="${idx}"${checked ? ' checked' : ''}>
+        <label
+          class="answer answer-selectable ${stateClass}"
+          data-index="${idx}"
+          data-correct="${correct}"
+        >
+          <input
+            type="${isSingle ? 'radio' : 'checkbox'}"
+            name="${fieldKey}"
+            value="${idx}"
+            ${checked ? ' checked' : ''}
+          />
           <span class="answer-text">${o.text}</span>
         </label>
       `;
@@ -73,10 +84,9 @@ export function renderQuestionCard(q, i, ctx) {
     ? `<img src="${escapeHtml(PATHS.image(imageRel))}" alt="Ilustracija pitanja" class="question-img" width="640" height="360" loading="lazy" decoding="async">`
     : '';
 
-  const eyeBtn =
-    !isResults
-      ? `<button type="button" class="btn-reveal-question" aria-label="Prikaži odgovor" title="Prikaži odgovor">${ICONS.eyeOn}</button>`
-      : '';
+  const eyeBtn = !isResults
+    ? `<button type="button" class="btn-reveal-question" aria-label="Prikaži odgovor" title="Prikaži odgovor">${ICONS.eyeOn}</button>`
+    : '';
 
   const starOn = bookmarksEnabled && isBookmarked(compositeKey);
   const bookmarkBtn =
@@ -85,27 +95,29 @@ export function renderQuestionCard(q, i, ctx) {
       : '';
 
   const sourceHtml =
-    showTopicSource && q._topicName ? `<p class="question-source">${escapeHtml(q._topicName)}</p>` : '';
+    showTopicSource && q._topicName
+      ? `<p class="question-source">${escapeHtml(q._topicName)}</p>`
+      : '';
 
   return html`
-    <div class="${cardClass}" data-id="${q.id}" data-question-index="${i}" data-field-key="${escapeHtml(fieldKey)}">
+    <div
+      class="${cardClass}"
+      data-id="${q.id}"
+      data-question-index="${i}"
+      data-field-key="${escapeHtml(fieldKey)}"
+    >
       <div class="question-header">
-        <span class="question-num">${totalQuestions != null ? `${i + 1} / ${totalQuestions}` : i + 1}</span>
+        <span class="question-num"
+          >${totalQuestions != null ? `${i + 1} / ${totalQuestions}` : i + 1}</span
+        >
         <div class="question-content">
           <p class="question-text">${q.text}</p>
-          ${html.raw(sourceHtml)}
-          ${html.raw(hintHtml)}
-          ${html.raw(resultBadge)}
+          ${html.raw(sourceHtml)} ${html.raw(hintHtml)} ${html.raw(resultBadge)}
           ${html.raw(imgHtml)}
         </div>
-        <div class="question-header-actions">
-          ${html.raw(bookmarkBtn)}
-          ${html.raw(eyeBtn)}
-        </div>
+        <div class="question-header-actions">${html.raw(bookmarkBtn)} ${html.raw(eyeBtn)}</div>
       </div>
-      <div class="${answersClass}">
-        ${html.raw(answersHtml)}
-      </div>
+      <div class="${answersClass}">${html.raw(answersHtml)}</div>
       ${html.raw(explanationHtml)}
     </div>
   `;

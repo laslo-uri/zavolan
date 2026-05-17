@@ -11,7 +11,14 @@ import { filterWrongQuestions, renderQuestionsView } from './quiz-templates.js';
 import { clearQuizView, quizLifecycle } from './quiz-state.js';
 import { showSubmitConfirmModal } from './submit-modal.js';
 
-function attachQuizNavForQuiz(detail, total, pathTopicId, pathSubtopicId, initialQuestionIndex, redirectRef) {
+function attachQuizNavForQuiz(
+  detail,
+  total,
+  pathTopicId,
+  pathSubtopicId,
+  initialQuestionIndex,
+  redirectRef
+) {
   if (quizLifecycle.navAbortController) {
     quizLifecycle.navAbortController.abort();
     quizLifecycle.navAbortController = null;
@@ -115,9 +122,15 @@ function attachQuizNavForQuiz(detail, total, pathTopicId, pathSubtopicId, initia
   }
 
   function onKeyDown(e) {
-    if (!document.body.classList.contains('quiz-page') || !detail.querySelector('.quiz-nav')) return;
+    if (!document.body.classList.contains('quiz-page') || !detail.querySelector('.quiz-nav'))
+      return;
     const active = document.activeElement;
-    if (active && active.closest('.question-card') && /^(INPUT|SELECT|TEXTAREA)$/.test(active.tagName)) return;
+    if (
+      active &&
+      active.closest('.question-card') &&
+      /^(INPUT|SELECT|TEXTAREA)$/.test(active.tagName)
+    )
+      return;
     const key = e.key;
     if (key === 'ArrowLeft' || key === 'ArrowUp') {
       if (currentIndex > 0) {
@@ -344,7 +357,14 @@ function attachPitanjaHandlersForQuiz(detail, questions, ctx) {
     });
   }
 
-  attachQuizNavForQuiz(detail, questions.length, pathTopicId, pathSubtopicId, routeQuestionIndex, redirectRef);
+  attachQuizNavForQuiz(
+    detail,
+    questions.length,
+    pathTopicId,
+    pathSubtopicId,
+    routeQuestionIndex,
+    redirectRef
+  );
 
   attachAnswerDeselectHandlers(detail, {
     readOnly: Boolean(lastResults),

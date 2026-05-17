@@ -26,7 +26,7 @@ function generateCounts() {
     const filePath = path.join(DATABASE_DIR, file);
     try {
       const json = JSON.parse(fs.readFileSync(filePath, 'utf8'));
-      const count = json.meta?.questionCount ?? (json.questions?.length ?? 0);
+      const count = json.meta?.questionCount ?? json.questions?.length ?? 0;
       counts[subtopicId] = count;
     } catch (err) {
       console.warn(`Warning: could not read ${file}`, err.message);

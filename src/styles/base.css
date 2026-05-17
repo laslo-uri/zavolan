@@ -1,5 +1,6 @@
-
-* { box-sizing: border-box; }
+* {
+  box-sizing: border-box;
+}
 
 html {
   -webkit-text-size-adjust: 100%;
@@ -81,7 +82,8 @@ body {
   line-height: 1.6;
   background: var(--color-bg);
   color: var(--color-text);
-  padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+  padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom)
+    env(safe-area-inset-left);
 }
 
 .skip-link {
@@ -100,7 +102,6 @@ body {
   box-shadow: var(--shadow-hover);
   text-decoration: none;
   transform: translateY(-150%);
-  
 }
 
 .skip-link:focus {
@@ -118,4 +119,3 @@ body {
     transition: transform var(--transition);
   }
 }
-

@@ -27,7 +27,10 @@ export function attachHeroBrand3D(detail) {
     const tilt = `perspective(1200px) rotateX(${-currentY}deg) rotateY(${currentX}deg)`;
     const lift = currentZ > 0.5 ? ` translateZ(${currentZ}px)` : '';
     inner.style.transform = tilt + lift;
-    const moving = Math.abs(currentX - targetX) > 0.02 || Math.abs(currentY - targetY) > 0.02 || Math.abs(currentZ - targetZ) > 0.5;
+    const moving =
+      Math.abs(currentX - targetX) > 0.02 ||
+      Math.abs(currentY - targetY) > 0.02 ||
+      Math.abs(currentZ - targetZ) > 0.5;
     if (moving) rafId = requestAnimationFrame(animate);
     else rafId = null;
   }

@@ -192,7 +192,10 @@
   justify-content: center;
   gap: 0.5rem;
   padding: 0.75rem 1.25rem;
-  transition: background var(--transition), transform var(--transition), box-shadow var(--transition);
+  transition:
+    background var(--transition),
+    transform var(--transition),
+    box-shadow var(--transition);
 }
 
 .btn-retry:hover {
@@ -228,24 +231,24 @@
   color: var(--color-error);
   border-color: rgba(239, 68, 68, 0.3);
 }
-.question-card.revealed .answer[data-correct="true"].wrong {
+.question-card.revealed .answer[data-correct='true'].wrong {
   background: var(--color-error-bg);
   border-color: var(--color-error);
   color: var(--color-error);
 }
 
-.question-card.revealed .answer[data-correct="true"].wrong::before {
+.question-card.revealed .answer[data-correct='true'].wrong::before {
   border-color: var(--color-error);
   background: transparent;
 }
 
-.question-card.revealed .answer[data-correct="false"].selected {
+.question-card.revealed .answer[data-correct='false'].selected {
   background: var(--color-error-bg);
   border-color: var(--color-error);
   color: var(--color-error);
 }
 
-.question-card.revealed .answer[data-correct="false"].selected::before {
+.question-card.revealed .answer[data-correct='false'].selected::before {
   content: '✕';
   display: flex;
   align-items: center;
@@ -264,7 +267,9 @@
   border: none;
   border-radius: var(--radius-sm);
   cursor: pointer;
-  transition: background var(--transition), transform var(--transition);
+  transition:
+    background var(--transition),
+    transform var(--transition);
   margin-top: 1rem;
 }
 
@@ -283,7 +288,10 @@
   background: transparent;
   color: var(--color-text);
   font-weight: 600;
-  transition: background var(--transition), border-color var(--transition), color var(--transition);
+  transition:
+    background var(--transition),
+    border-color var(--transition),
+    color var(--transition);
 }
 
 .btn-retry:hover {
@@ -296,4 +304,3 @@
   font-size: 1.1em;
   line-height: 1;
 }
-

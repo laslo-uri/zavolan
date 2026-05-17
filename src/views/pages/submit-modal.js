@@ -19,7 +19,8 @@ function getModalFocusables(overlay) {
 export function showSubmitConfirmModal(opts) {
   const { unanswered, totalQuestions, onProceed, onCancel, onGoToQuestion } = opts;
   const answered = totalQuestions ? totalQuestions - unanswered.length : 0;
-  const returnFocusEl = document.activeElement instanceof HTMLElement ? document.activeElement : null;
+  const returnFocusEl =
+    document.activeElement instanceof HTMLElement ? document.activeElement : null;
 
   const overlay = document.createElement('div');
   overlay.className = 'modal-overlay submit-confirm-modal';
@@ -56,7 +57,11 @@ export function showSubmitConfirmModal(opts) {
   `;
 
   function restoreFocus() {
-    if (returnFocusEl && document.body.contains(returnFocusEl) && typeof returnFocusEl.focus === 'function') {
+    if (
+      returnFocusEl &&
+      document.body.contains(returnFocusEl) &&
+      typeof returnFocusEl.focus === 'function'
+    ) {
       try {
         returnFocusEl.focus();
       } catch {

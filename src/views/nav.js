@@ -11,12 +11,17 @@ import { syncScrollablePanels } from '../lib/scrollable-panels.js';
 function subtopicProgressSuffixNav(subtopicId) {
   const r = getSubtopicLastResult(subtopicId);
   if (!r) return '';
-  const cls =
-    r.lastPct >= 80 ? 'subtopic-progress subtopic-progress--strong' : 'subtopic-progress';
+  const cls = r.lastPct >= 80 ? 'subtopic-progress subtopic-progress--strong' : 'subtopic-progress';
   return `<span class="${cls}" title="Poslednji rezultat: ${r.lastPct}%">${r.lastPct}%</span>`;
 }
 
-export function renderNav(data, { topicId, subtopicId }, counts = {}, collapsedTopics = new Set(), hideEmpty = getHideEmptyChapters()) {
+export function renderNav(
+  data,
+  { topicId, subtopicId },
+  counts = {},
+  collapsedTopics = new Set(),
+  hideEmpty = getHideEmptyChapters()
+) {
   const nav = document.getElementById('nav');
   if (!nav) return;
 
@@ -35,30 +40,30 @@ export function renderNav(data, { topicId, subtopicId }, counts = {}, collapsedT
     ? 'Isključi filter praznih oblasti. Prikaži sve teme u meniju, uključujući bez pitanja.'
     : 'Uključi filter praznih oblasti. Sakrij iz menija teme i podoblasti koje nemaju pitanja.';
 
-  const topicsHtml = topicsTree.map((topic) => {
-    const active = topic.id === topicId;
-    const expanded = active && topic.subtopics?.length && !collapsedTopics.has(topic.id);
-    const icon = getCategoryIcon(topic.id);
-    const topicCount = (topic.subtopics || []).reduce((sum, s) => sum + (counts[s.id] ?? 0), 0);
-    const subtopicsHtml = expanded
-      ? `
+  const topicsHtml = topicsTree
+    .map((topic) => {
+      const active = topic.id === topicId;
+      const expanded = active && topic.subtopics?.length && !collapsedTopics.has(topic.id);
+      const icon = getCategoryIcon(topic.id);
+      const topicCount = (topic.subtopics || []).reduce((sum, s) => sum + (counts[s.id] ?? 0), 0);
+      const subtopicsHtml = expanded
+        ? `
       <div class="nav-sublist">
         ${(topic.subtopics || [])
-          .map(
-            (sub) => {
-              const n = counts[sub.id] ?? 0;
-              return `<a href="/${topic.id}/${formatSubtopicPathSegment(topic.id, sub.id)}" class="nav-subitem ${sub.id === subtopicId ? 'active' : ''}" title="${escapeHtml(sub.description || sub.name)}"><span class="nav-subitem-text">${escapeHtml(sub.name)}</span><span class="topic-count" aria-label="${n} pitanja">${n}</span>${subtopicProgressSuffixNav(sub.id)}</a>`;
-            }
-          )
+          .map((sub) => {
+            const n = counts[sub.id] ?? 0;
+            return `<a href="/${topic.id}/${formatSubtopicPathSegment(topic.id, sub.id)}" class="nav-subitem ${sub.id === subtopicId ? 'active' : ''}" title="${escapeHtml(sub.description || sub.name)}"><span class="nav-subitem-text">${escapeHtml(sub.name)}</span><span class="topic-count" aria-label="${n} pitanja">${n}</span>${subtopicProgressSuffixNav(sub.id)}</a>`;
+          })
           .join('')}
       </div>
     `
-      : '';
-    return `
+        : '';
+      return `
       <a href="/${topic.id}" class="nav-item nav-item--topic ${active ? 'active' : ''}" title="${escapeHtml(topic.description || topic.name)}"><span class="nav-item-icon">${icon}</span><span class="nav-item-text">${escapeHtml(getTopicDisplayName(topic, true))}</span><span class="topic-count">(${topicCount})</span></a>
       ${subtopicsHtml}
     `;
-  }).join('');
+    })
+    .join('');
 
   nav.innerHTML = `
     <div class="nav-scroll" role="navigation" aria-label="Teme ispita">
@@ -94,7 +99,10 @@ export function renderNav(data, { topicId, subtopicId }, counts = {}, collapsedT
   if (ns) {
     if (nav._navScrollAbort) nav._navScrollAbort.abort();
     nav._navScrollAbort = new AbortController();
-    ns.addEventListener('scroll', () => syncScrollablePanels(), { signal: nav._navScrollAbort.signal, passive: true });
+    ns.addEventListener('scroll', () => syncScrollablePanels(), {
+      signal: nav._navScrollAbort.signal,
+      passive: true,
+    });
   }
   requestAnimationFrame(() => syncScrollablePanels());
 }

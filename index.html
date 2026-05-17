@@ -1,69 +1,78 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="sr-Latn">
-<head>
-  <meta charset="UTF-8">
-  <script src="/theme-boot.js"></script>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <meta name="theme-color" content="#212121">
-  <meta name="description" content="ZaVolan — vežbajte pitanja teorijskog ispita iz bezbednosti saobraćaja za vozački ispit u Republici Srbiji. Teme, podoblasti i režim simulacije.">
-  <meta property="og:title" content="ZaVolan · Priprema za vozački ispit">
-  <meta property="og:description" content="Vežbajte pitanja teorijskog ispita iz bezbednosti saobraćaja za vozački ispit u Republici Srbiji.">
-  <meta property="og:type" content="website">
-  <meta property="og:locale" content="sr_RS">
-  <meta property="og:image" content="/og-image.png">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="ZaVolan · Priprema za vozački ispit">
-  <meta name="twitter:description" content="Vežbajte pitanja teorijskog ispita iz bezbednosti saobraćaja za vozački ispit u Republici Srbiji.">
-  <meta name="twitter:image" content="/og-image.png">
-  <title>ZaVolan · Priprema za vozački ispit</title>
-  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="preload" href="/data.json" as="fetch" crossorigin>
-  <link rel="stylesheet" href="/critical-shell.css">
-</head>
-<body>
-  <a href="#detail" class="skip-link">Preskoči na sadržaj</a>
-  <div class="sidebar-overlay" id="sidebarOverlay" aria-hidden="true"></div>
-  <button
-    type="button"
-    class="sidebar-toggle sidebar-toggle--peek js-sidebar-toggle"
-    aria-label="Otvori navigaciju"
-    title="Otvori navigaciju"
-  >
-    <span class="sidebar-toggle__icon" aria-hidden="true"></span>
-  </button>
-  <div class="app">
-    <aside class="sidebar" id="sidebar">
-      <div class="sidebar-header">
-        <div class="sidebar-header__row">
-          <a href="/" class="sidebar-brand" aria-label="ZaVolan – početna">
-            <div class="sidebar-logo" aria-hidden="true">
-              <img src="/logo.svg" alt="" width="32" height="32">
-            </div>
-            <h1 class="sidebar-title">ZaVolan</h1>
-          </a>
-          <button
-            type="button"
-            class="sidebar-toggle sidebar-toggle--in-drawer js-sidebar-toggle"
-            aria-label="Skupi navigaciju"
-            title="Skupi navigaciju"
-          >
-            <span class="sidebar-toggle__icon" aria-hidden="true"></span>
-          </button>
+  <head>
+    <meta charset="UTF-8" />
+    <script src="/theme-boot.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#212121" />
+    <meta
+      name="description"
+      content="ZaVolan — vežbajte pitanja teorijskog ispita iz bezbednosti saobraćaja za vozački ispit u Republici Srbiji. Teme, podoblasti i režim simulacije."
+    />
+    <meta property="og:title" content="ZaVolan · Priprema za vozački ispit" />
+    <meta
+      property="og:description"
+      content="Vežbajte pitanja teorijskog ispita iz bezbednosti saobraćaja za vozački ispit u Republici Srbiji."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="sr_RS" />
+    <meta property="og:image" content="/og-image.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="ZaVolan · Priprema za vozački ispit" />
+    <meta
+      name="twitter:description"
+      content="Vežbajte pitanja teorijskog ispita iz bezbednosti saobraćaja za vozački ispit u Republici Srbiji."
+    />
+    <meta name="twitter:image" content="/og-image.png" />
+    <title>ZaVolan · Priprema za vozački ispit</title>
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="preload" href="/data.json" as="fetch" crossorigin />
+    <link rel="stylesheet" href="/critical-shell.css" />
+  </head>
+  <body>
+    <a href="#detail" class="skip-link">Preskoči na sadržaj</a>
+    <div class="sidebar-overlay" id="sidebarOverlay" aria-hidden="true"></div>
+    <button
+      type="button"
+      class="sidebar-toggle sidebar-toggle--peek js-sidebar-toggle"
+      aria-label="Otvori navigaciju"
+      title="Otvori navigaciju"
+    >
+      <span class="sidebar-toggle__icon" aria-hidden="true"></span>
+    </button>
+    <div class="app">
+      <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+          <div class="sidebar-header__row">
+            <a href="/" class="sidebar-brand" aria-label="ZaVolan – početna">
+              <div class="sidebar-logo" aria-hidden="true">
+                <img src="/logo.svg" alt="" width="32" height="32" />
+              </div>
+              <h1 class="sidebar-title">ZaVolan</h1>
+            </a>
+            <button
+              type="button"
+              class="sidebar-toggle sidebar-toggle--in-drawer js-sidebar-toggle"
+              aria-label="Skupi navigaciju"
+              title="Skupi navigaciju"
+            >
+              <span class="sidebar-toggle__icon" aria-hidden="true"></span>
+            </button>
+          </div>
+          <p class="tagline">Od pitanja do vozačke</p>
         </div>
-        <p class="tagline">Od pitanja do vozačke</p>
-      </div>
-      <nav class="nav" id="nav"></nav>
-    </aside>
+        <nav class="nav" id="nav"></nav>
+      </aside>
 
-    <main class="content">
-      <nav class="breadcrumb" id="breadcrumb"><a href="/">Početna</a></nav>
-      <section class="detail" id="detail" tabindex="-1"></section>
-    </main>
-  </div>
-  <div id="offlineBanner" class="offline-banner" hidden role="status">
-    Nema veze sa mrežom — aplikacija može koristiti keširane podatke dok ste oflajn.
-  </div>
-  <script type="module" src="/src/main.js"></script>
-</body>
+      <main class="content">
+        <nav class="breadcrumb" id="breadcrumb"><a href="/">Početna</a></nav>
+        <section class="detail" id="detail" tabindex="-1"></section>
+      </main>
+    </div>
+    <div id="offlineBanner" class="offline-banner" hidden role="status">
+      Nema veze sa mrežom — aplikacija može koristiti keširane podatke dok ste oflajn.
+    </div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
 </html>

@@ -45,5 +45,7 @@ function migrateFile(filePath) {
   console.log(`Migrated ${filePath}`);
 }
 
-const files = fs.readdirSync(DB_DIR).filter((f) => f.endsWith('.json') && f.startsWith('podoblast'));
+const files = fs
+  .readdirSync(DB_DIR)
+  .filter((f) => f.endsWith('.json') && f.startsWith('podoblast'));
 files.forEach((f) => migrateFile(path.join(DB_DIR, f)));
