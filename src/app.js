@@ -122,8 +122,11 @@ function showLoadError(err) {
   const msg = err?.message || String(err);
   detail.innerHTML = html`
     <div class="load-error" role="alert">
-      <p>Nije moguće učitati podatke.</p>
-      <p class="load-error-message">${escapeHtml(msg)}</p>
+      <p>Podaci se ne učitavaju. Proverite internet konekciju ili pokušajte kasnije.</p>
+      <details class="load-error-details">
+        <summary class="load-error-details__summary">Tehnički detalji</summary>
+        <pre class="load-error-details__pre">${escapeHtml(msg)}</pre>
+      </details>
       <p><button type="button" class="btn-retry">Pokušaj ponovo</button></p>
     </div>
   `;
@@ -140,8 +143,11 @@ function showRenderError(err) {
   const msg = err?.message || String(err);
   detail.innerHTML = html`
     <div class="load-error" role="alert">
-      <p>Došlo je do greške pri prikazu stranice.</p>
-      <p class="load-error-message">${escapeHtml(msg)}</p>
+      <p>Stranica se nije mogla prikazati. Osvežite stranicu ili se vratite na početnu.</p>
+      <details class="load-error-details">
+        <summary class="load-error-details__summary">Tehnički detalji</summary>
+        <pre class="load-error-details__pre">${escapeHtml(msg)}</pre>
+      </details>
       <p><button type="button" class="btn-retry" id="btnRenderErrorRetry">Osveži stranicu</button></p>
     </div>
   `;

@@ -1,4 +1,4 @@
-import { PATHS } from '../../config.js';
+import { PATHS, safeQuestionImagePath } from '../../config.js';
 import { ICONS } from '../../icons.js';
 import { getDisplayAnswerOrder } from '../../lib/answer-order.js';
 import { isBookmarked } from '../../lib/bookmarks.js';
@@ -68,8 +68,9 @@ export function renderQuestionCard(q, i, ctx) {
   const explanationHtml = q.explanation
     ? `<p class="question-explanation">${escapeHtml(q.explanation)}</p>`
     : '';
-  const imgHtml = q.image
-    ? `<img src="${PATHS.image(q.image)}" alt="Ilustracija pitanja" class="question-img" width="640" height="360" loading="lazy" decoding="async">`
+  const imageRel = q.image != null ? safeQuestionImagePath(String(q.image)) : null;
+  const imgHtml = imageRel
+    ? `<img src="${escapeHtml(PATHS.image(imageRel))}" alt="Ilustracija pitanja" class="question-img" width="640" height="360" loading="lazy" decoding="async">`
     : '';
 
   const eyeBtn =

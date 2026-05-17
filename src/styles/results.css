@@ -27,6 +27,12 @@
   }
 }
 
+@media (prefers-reduced-motion: reduce) {
+  .result-summary {
+    animation: none;
+  }
+}
+
 .result-summary::before {
   content: '';
   position: absolute;

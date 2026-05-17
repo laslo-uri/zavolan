@@ -8,6 +8,12 @@ import {
 import { filterTopicsForDisplay } from '../../lib/hide-empty-chapters.js';
 import { enrichQuestion } from '../../lib/question-key.js';
 import { navigate } from '../../lib/router.js';
+import {
+  buildSubtopicSegments,
+  mergeGlobalIntoGrouped,
+  pickDistinctGlobalIndices,
+  pickDistinctGlobalIndicesExcluding,
+} from '../../lib/simulation-sample.js';
 import { fetchQuestions, listSubtopicsWithQuestions } from '../../services/api.js';
 import { escapeHtml, getTopicDisplayName } from '../../utils/dom.js';
 import { mountEnrichedQuiz } from './quiz-mount.js';
@@ -38,16 +44,63 @@ async function buildSimulationQuestionList(data, counts, { topicIds, count }) {
   const subs = listSubtopicsWithQuestions(data, counts).filter(
     (s) => !topicIds?.length || topicIds.includes(s.topicId)
   );
-  const chunks = await Promise.all(
-    subs.map(async (s) => {
-      const qs = await fetchQuestions(s.id);
-      return qs.map((q) => enrichQuestion(q, s.id, s.topicId, s.topicName));
-    })
-  );
-  const pool = chunks.flat();
-  shuffleInPlace(pool);
-  const n = Math.min(Math.max(1, count), pool.length);
-  return { questions: pool.slice(0, n), poolSize: pool.length };
+  const { segments, poolSize } = buildSubtopicSegments(subs, counts);
+  if (poolSize <= 0) return { questions: [], poolSize: 0 };
+
+  const n = Math.min(Math.max(1, count), poolSize);
+  const tried = new Set();
+  const grouped = new Map();
+  const cache = new Map();
+
+  for (const g of pickDistinctGlobalIndices(poolSize, n)) {
+    tried.add(g);
+    mergeGlobalIntoGrouped(segments, grouped, g);
+  }
+
+  async function prefetchGrouped() {
+    await Promise.all(
+      [...grouped.keys()].map(async (subId) => {
+        if (!cache.has(subId)) cache.set(subId, await fetchQuestions(subId));
+      })
+    );
+  }
+
+  function materialize() {
+    const out = [];
+    for (const { subtopic, indices } of grouped.values()) {
+      const qs = cache.get(subtopic.id) ?? [];
+      for (const idx of indices) {
+        const q = qs[idx];
+        if (q) {
+          out.push(enrichQuestion(q, subtopic.id, subtopic.topicId, subtopic.topicName));
+        }
+      }
+    }
+    return out;
+  }
+
+  await prefetchGrouped();
+  let questions = materialize();
+
+  let rounds = 0;
+  while (questions.length < n && tried.size < poolSize && rounds < 400) {
+    rounds++;
+    const need = n - questions.length;
+    const room = poolSize - tried.size;
+    if (need <= 0 || room <= 0) break;
+    const batch = pickDistinctGlobalIndicesExcluding(poolSize, Math.min(need, room), tried);
+    if (!batch.length) break;
+    for (const g of batch) {
+      tried.add(g);
+      mergeGlobalIntoGrouped(segments, grouped, g);
+    }
+    await prefetchGrouped();
+    questions = materialize();
+  }
+
+  shuffleInPlace(questions);
+  const trimmed = questions.slice(0, Math.min(n, questions.length));
+  return { questions: trimmed, poolSize };
 }
 
 export function renderSimulationSetup(detail, data, counts, hideEmpty, filterOnly) {

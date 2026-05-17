@@ -20,6 +20,24 @@ export const PATHS = {
   image: (path) => `${BASE}database/${path}`,
 };
 
+/** Safe relative path fragment for `PATHS.image` (mitigates breakout via question JSON). */
+export function safeQuestionImagePath(raw) {
+  if (raw == null || typeof raw !== 'string') return null;
+  const s = raw.trim();
+  if (
+    !s ||
+    s.includes('..') ||
+    s.startsWith('/') ||
+    s.includes('://') ||
+    s.includes(':') ||
+    /[\0<>"'`]/.test(s) ||
+    !/^[\w./-]+$/.test(s)
+  ) {
+    return null;
+  }
+  return s;
+}
+
 export const BREAKPOINTS = {
   mobile: 768,
 };

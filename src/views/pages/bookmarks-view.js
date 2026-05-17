@@ -44,8 +44,49 @@ async function loadOrderedBookmarkQuestions(data, counts) {
   return ordered;
 }
 
+const BOOKMARKS_LOADING_SKELETON = `
+      <div class="loading-skeleton">
+        <div class="skeleton-card">
+          <div class="skeleton-line long"></div>
+          <div class="skeleton-line medium"></div>
+          <div class="skeleton-line short"></div>
+        </div>
+        <div class="skeleton-card">
+          <div class="skeleton-line long"></div>
+          <div class="skeleton-line medium"></div>
+        </div>
+        <div class="skeleton-card">
+          <div class="skeleton-line long"></div>
+        </div>
+      </div>`;
+
 export async function renderBookmarksPage(detail, data, counts, routeQuestionIndex) {
+  if (getBookmarkKeys().length === 0) {
+    clearQuizView();
+    detail.innerHTML = `
+      <article class="page page-bookmarks-empty">
+        <div class="bookmarks-empty">
+          <div class="bookmarks-empty__icon" aria-hidden="true">☆</div>
+          <h2 class="bookmarks-empty__title">Još ništa nije obeleženo</h2>
+          <p class="bookmarks-empty__text">Tokom vežbe kliknite zvezdicu na kartici pitanja — lista će se pojaviti ovde.</p>
+          <a href="/" class="bookmarks-empty__cta">Na početnu</a>
+        </div>
+      </article>`;
+    return;
+  }
+
+  clearQuizView();
+  detail.innerHTML = `
+    <article class="page page--bookmarks-mode" aria-busy="true">
+      <h2 class="page-title">Obeležena pitanja</h2>
+      <p class="page-meta">Učitavanje…</p>
+      ${BOOKMARKS_LOADING_SKELETON}
+    </article>`;
+
   const ordered = await loadOrderedBookmarkQuestions(data, counts);
+  const shell = detail.querySelector('.page.page--bookmarks-mode');
+  shell?.removeAttribute('aria-busy');
+
   if (!ordered.length) {
     clearQuizView();
     detail.innerHTML = `

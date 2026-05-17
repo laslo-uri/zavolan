@@ -5,7 +5,7 @@ export function renderHistoryPage(detail) {
   const items = getQuizHistory();
   if (!items.length) {
     detail.innerHTML = `
-      <article class="page page-history-empty">
+      <article class="page page-history-empty page--history-mode">
         <div class="history-empty">
           <h2 class="page-title">Istorija pokušaja</h2>
           <p class="page-meta">Još nema sačuvanih rezultata. Završite vežbu u nekoj podoblasti — poslednji rezultat se čuva lokalno na ovom uređaju.</p>
@@ -34,7 +34,7 @@ export function renderHistoryPage(detail) {
     .join('');
 
   detail.innerHTML = `
-    <article class="page page-history">
+    <article class="page page-history page--history-mode">
       <h2 class="page-title">Istorija pokušaja</h2>
       <p class="page-meta">Poslednjih ${items.length} pokušaja (samo na ovom uređaju).</p>
       <div class="history-table-wrap">

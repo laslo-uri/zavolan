@@ -575,6 +575,27 @@
   line-height: 1;
 }
 
+:root[data-theme='light'] .quiz-nav {
+  background: color-mix(in srgb, var(--color-bg-card) 94%, rgba(0, 0, 0, 0.04));
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-hover);
+  backdrop-filter: blur(10px);
+}
+
+:root[data-theme='light'] .quiz-nav .exam-timer--nav {
+  border-right-color: var(--color-border);
+}
+
+:root[data-theme='light'] .skeleton-line {
+  background: linear-gradient(
+    90deg,
+    var(--color-neutral) 25%,
+    var(--color-border) 50%,
+    var(--color-neutral) 75%
+  );
+  background-size: 200% 100%;
+}
+
 .weak-areas {
   margin: 1rem 0 0;
   padding: 0.75rem 1rem;
@@ -722,6 +743,30 @@
 
 .home-shortcut-card--star .home-shortcut-card__icon {
   filter: drop-shadow(0 0 8px rgba(250, 204, 21, 0.35));
+}
+
+.home-shortcut-card--history {
+  border-top: 3px solid color-mix(in srgb, var(--color-warning) 55%, transparent);
+}
+
+.home-shortcut-card--history:hover {
+  border-color: color-mix(in srgb, var(--color-warning) 70%, var(--color-border));
+  box-shadow:
+    0 6px 24px rgba(0, 0, 0, 0.22),
+    inset 0 0 0 1px color-mix(in srgb, var(--color-warning) 18%, transparent);
+}
+
+.home-shortcut-card--history:focus-visible {
+  outline: 2px solid var(--color-warning-hover);
+  outline-offset: 2px;
+}
+
+.home-shortcut-card--history .home-shortcut-card__go {
+  color: var(--color-warning-hover);
+}
+
+.home-shortcut-card:nth-child(3) {
+  animation-delay: 0.49s;
 }
 
 .home-shortcut-card__icon {

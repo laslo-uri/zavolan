@@ -1,0 +1,56 @@
+/* Shell styles before bundled CSS; keeps first paint stable with CSP style-src 'self'. */
+html,
+body {
+  background: #212121;
+  color: #ececec;
+  margin: 0;
+}
+html[data-theme='light'] body,
+html[data-theme='light'] {
+  background: #fafafa;
+  color: #18181b;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+.app {
+  display: flex;
+  min-height: 100vh;
+}
+.sidebar {
+  background: #171717;
+  width: 260px;
+  flex-shrink: 0;
+}
+html[data-theme='light'] .sidebar {
+  background: #f4f4f5;
+}
+.content {
+  flex: 1;
+}
+.skip-link {
+  position: fixed;
+  top: 0;
+  left: 0.5rem;
+  z-index: 2000;
+  padding: 0.5rem 1rem;
+  margin-top: max(0.5rem, env(safe-area-inset-top));
+  font-family: system-ui, sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #fff;
+  background: #10a37f;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  text-decoration: none;
+  transform: translateY(-150%);
+}
+.skip-link:focus {
+  outline: none;
+}
+.skip-link:focus-visible {
+  transform: translateY(0);
+  outline: 2px solid rgba(16, 163, 127, 0.35);
+  outline-offset: 2px;
+}

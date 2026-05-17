@@ -1,8 +1,13 @@
 import { getDisplayAnswerOrder } from '../../lib/answer-order.js';
+import { ICONS } from '../../icons.js';
 import { escapeHtml } from '../../utils/dom.js';
 import { fieldKeyForQuestion, renderQuestionCard } from './question-card.js';
 
 const PASS_THRESHOLD = 80;
+
+function quizNavKeyHintIcons() {
+  return `<span class="quiz-nav-hint-kbd__keys" aria-hidden="true"><span class="quiz-nav-hint-kbd__key">${ICONS.navPrev}</span><span class="quiz-nav-hint-kbd__key">${ICONS.navNext}</span><span class="quiz-nav-hint-kbd__key">${ICONS.navUp}</span><span class="quiz-nav-hint-kbd__key">${ICONS.navDown}</span></span>`;
+}
 
 export function isQuestionAnswerCorrect(q, results) {
   const fk = fieldKeyForQuestion(q);
@@ -156,7 +161,7 @@ export function renderQuestionsView(questions, results = null, viewOpts = {}) {
 
   const kbdHint =
     !isResults && questions.length > 1
-      ? `<p class="quiz-nav-hint-kbd" id="quizNavKbdHint">Tip: tastaturi ← → ili ↑ ↓ menjaju aktivno pitanje (van polja za odgovor).</p>`
+      ? `<p class="quiz-nav-hint-kbd" id="quizNavKbdHint">Tip: tastature ${quizNavKeyHintIcons()} menjaju aktivno pitanje (van polja za odgovor).</p>`
       : '';
 
   return `
@@ -171,11 +176,11 @@ export function renderQuestionsView(questions, results = null, viewOpts = {}) {
         ${bottomActions}
         <nav class="quiz-nav${timerNavEmbed ? ' quiz-nav--has-timer' : ''}" aria-label="${navAria}">
           ${timerNavEmbed}
-          <button type="button" class="quiz-nav__btn quiz-nav__btn--top" id="btnQuizNavTop" aria-label="Na vrh" title="Na vrh">↑</button>
-          <button type="button" class="quiz-nav__btn quiz-nav__btn--prev" id="btnQuizNavPrev" aria-label="Prethodno pitanje" title="Prethodno">←</button>
-          <span class="quiz-nav__counter" id="quizNavCounter">1 / ${questions.length}</span>
-          <button type="button" class="quiz-nav__btn quiz-nav__btn--next" id="btnQuizNavNext" aria-label="Sledeće pitanje" title="Sledeće">→</button>
-          <button type="button" class="quiz-nav__btn quiz-nav__btn--bottom" id="btnQuizNavBottom" aria-label="Na dno" title="Na dno">↓</button>
+          <button type="button" class="quiz-nav__btn quiz-nav__btn--top" id="btnQuizNavTop" aria-label="Na vrh" title="Na vrh">${ICONS.navUp}</button>
+          <button type="button" class="quiz-nav__btn quiz-nav__btn--prev" id="btnQuizNavPrev" aria-label="Prethodno pitanje" title="Prethodno">${ICONS.navPrev}</button>
+          <span class="quiz-nav__counter" id="quizNavCounter" aria-live="polite" aria-atomic="true">1 / ${questions.length}</span>
+          <button type="button" class="quiz-nav__btn quiz-nav__btn--next" id="btnQuizNavNext" aria-label="Sledeće pitanje" title="Sledeće">${ICONS.navNext}</button>
+          <button type="button" class="quiz-nav__btn quiz-nav__btn--bottom" id="btnQuizNavBottom" aria-label="Na dno" title="Na dno">${ICONS.navDown}</button>
           ${kbdHint}
         </nav>
       </article>

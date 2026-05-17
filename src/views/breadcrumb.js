@@ -7,15 +7,15 @@ export function renderBreadcrumb(data, { topicId, subtopicId }) {
   if (!bc) return;
 
   if (topicId === SIMULATION_TOPIC_ID) {
-    bc.innerHTML = `<a href="/">Početna</a><span class="sep">/</span><span class="current breadcrumb-current--simulation">Simulacija</span>`;
+    bc.innerHTML = `<a href="/">Početna</a><span class="sep">/</span><span class="current breadcrumb-current--simulation" aria-current="page">Simulacija</span>`;
     return;
   }
   if (topicId === BOOKMARKS_TOPIC_ID) {
-    bc.innerHTML = `<a href="/">Početna</a><span class="sep">/</span><span class="current breadcrumb-current--bookmarks">Obeležena pitanja</span>`;
+    bc.innerHTML = `<a href="/">Početna</a><span class="sep">/</span><span class="current breadcrumb-current--bookmarks" aria-current="page">Obeležena pitanja</span>`;
     return;
   }
   if (topicId === HISTORY_TOPIC_ID) {
-    bc.innerHTML = `<a href="/">Početna</a><span class="sep">/</span><span class="current breadcrumb-current--history">Istorija pokušaja</span>`;
+    bc.innerHTML = `<a href="/">Početna</a><span class="sep">/</span><span class="current breadcrumb-current--history" aria-current="page">Istorija pokušaja</span>`;
     return;
   }
 
@@ -23,7 +23,7 @@ export function renderBreadcrumb(data, { topicId, subtopicId }) {
   if (!topicId || !topic) {
     const isAllTopics = topicId === 'topics';
     bc.innerHTML = isAllTopics
-      ? `<a href="/">Početna</a><span class="sep">/</span><span class="current">Sve teme</span>`
+      ? `<a href="/">Početna</a><span class="sep">/</span><span class="current" aria-current="page">Sve teme</span>`
       : '<a href="/">Početna</a>';
     return;
   }
@@ -39,7 +39,7 @@ export function renderBreadcrumb(data, { topicId, subtopicId }) {
       <span class="sep">/</span>
       <a href="/${topicId}" class="breadcrumb-topic"><span class="breadcrumb-icon">${topicIcon}</span>${escapeHtml(getTopicDisplayName(topic, true))}</a>
       <span class="sep">/</span>
-      <span class="current">${escapeHtml(sub.name)}</span>
+      <span class="current" aria-current="page">${escapeHtml(sub.name)}</span>
     `;
   } else {
     bc.innerHTML = `
@@ -47,7 +47,7 @@ export function renderBreadcrumb(data, { topicId, subtopicId }) {
       <span class="sep">/</span>
       <a href="/topics">Sve teme</a>
       <span class="sep">/</span>
-      <span class="current breadcrumb-topic"><span class="breadcrumb-icon">${topicIcon}</span>${escapeHtml(getTopicDisplayName(topic, true))}</span>
+      <span class="current breadcrumb-topic" aria-current="page"><span class="breadcrumb-icon">${topicIcon}</span>${escapeHtml(getTopicDisplayName(topic, true))}</span>
     `;
   }
 }
