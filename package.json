@@ -9,7 +9,7 @@
   },
   "scripts": {
     "dev": "vite",
-    "prebuild": "node scripts/generate-pwa-icons.mjs",
+    "generate-pwa-icons": "node scripts/generate-pwa-icons.mjs",
     "build": "vite build",
     "format": "prettier --write .",
     "lint": "eslint .",
