@@ -4,6 +4,7 @@ import { toggleBookmark } from '../../lib/bookmarks.js';
 import { getExamTimerSeconds, startExamCountdown } from '../../lib/exam-timer.js';
 import { recordSubtopicAttempt } from '../../lib/progress.js';
 import { replaceQuestionPath } from '../../lib/router.js';
+import { attachAnswerDeselectHandlers } from '../../lib/answer-selection.js';
 import { getDisplayAnswerOrder } from '../../lib/answer-order.js';
 import { fieldKeyForQuestion } from './question-card.js';
 import { filterWrongQuestions, renderQuestionsView } from './quiz-templates.js';
@@ -344,6 +345,11 @@ function attachPitanjaHandlersForQuiz(detail, questions, ctx) {
   }
 
   attachQuizNavForQuiz(detail, questions.length, pathTopicId, pathSubtopicId, routeQuestionIndex, redirectRef);
+
+  attachAnswerDeselectHandlers(detail, {
+    readOnly: Boolean(lastResults),
+    signal: quizLifecycle.navAbortController?.signal,
+  });
 }
 
 function startExamTimerIfNeeded(detail) {
